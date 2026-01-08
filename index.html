@@ -2579,41 +2579,6 @@
         .t-result-value { font-size: 26px; font-weight: 800; line-height: 1; }
         .t-result-label { font-size: 12px; opacity: 0.8; margin-top: 4px; }
         
-        .t-timer-block { background: #0a0f0a; border-radius: 12px; padding: 20px; text-align: center; margin-bottom: 20px; color: #fff; }
-        .t-timer-header { display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 6px; }
-        .t-timer-header svg { color: var(--primary); }
-        .t-timer-header h3 { font-size: 15px; font-weight: 700; margin: 0; }
-        .t-timer-subtitle { color: #94a3b8; font-size: 13px; margin-bottom: 14px; }
-        .t-timer { display: flex; justify-content: center; gap: 8px; margin-bottom: 14px; }
-        .t-timer-unit { background: rgba(34,197,94,0.1); border: 1px solid var(--primary); border-radius: 10px; padding: 10px 14px; min-width: 60px; }
-        .t-timer-value { font-size: 22px; font-weight: 800; color: var(--primary); line-height: 1; }
-        .t-timer-label-sm { font-size: 10px; color: #94a3b8; text-transform: uppercase; margin-top: 2px; }
-        .t-timer-btns { display: flex; gap: 8px; justify-content: center; }
-        
-        .t-pricing-grid { display: grid; gap: 16px; }
-        .t-price-card { background: #fff; border: 2px solid #e2e8f0; border-radius: 16px; padding: 20px; position: relative; text-align: left; }
-        .t-price-card.t-popular { border-color: var(--primary); }
-        .t-price-badge { position: absolute; top: -10px; left: 50%; transform: translateX(-50%); background: var(--primary); color: #0a0f0a; padding: 4px 12px; border-radius: 50px; font-size: 11px; font-weight: 700; text-transform: uppercase; }
-        .t-price-header { text-align: center; padding-bottom: 14px; border-bottom: 1px solid #e2e8f0; margin-bottom: 14px; }
-        .t-price-name { font-size: 18px; font-weight: 800; margin-bottom: 2px; color: #1a1a1a; }
-        .t-price-desc { font-size: 13px; color: #64748b; margin-bottom: 10px; }
-        .t-price-old { font-size: 14px; color: #64748b; text-decoration: line-through; }
-        .t-price-current { font-size: 34px; font-weight: 800; line-height: 1; color: #1a1a1a; }
-        .t-price-current span { font-size: 16px; font-weight: 500; }
-        .t-price-save { display: inline-block; background: rgba(34,197,94,0.1); color: var(--primary-dark); padding: 4px 10px; border-radius: 6px; font-size: 12px; font-weight: 600; margin-top: 8px; }
-        .t-price-features { list-style: none; padding: 0; margin: 0 0 14px; }
-        .t-price-features li { display: flex; align-items: center; gap: 8px; padding: 6px 0; font-size: 14px; color: #1a1a1a; }
-        .t-price-features svg { color: var(--primary); flex-shrink: 0; }
-        .t-price-cta { width: 100%; }
-        .t-price-installment { text-align: center; margin-top: 12px; padding-top: 12px; border-top: 1px solid #e2e8f0; font-size: 13px; color: #64748b; }
-        .t-price-installment strong { color: #1a1a1a; }
-        
-        .t-lock-block { margin-top: 20px; background: linear-gradient(135deg, rgba(34,197,94,0.1), rgba(34,197,94,0.05)); border: 2px solid var(--primary); border-radius: 16px; padding: 16px; display: flex; align-items: center; gap: 14px; flex-wrap: wrap; text-align: left; }
-        .t-lock-icon { width: 44px; height: 44px; background: var(--primary); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: #fff; }
-        .t-lock-content { flex: 1; min-width: 180px; }
-        .t-lock-content h4 { font-size: 15px; font-weight: 700; margin-bottom: 2px; color: #1a1a1a; }
-        .t-lock-content p { font-size: 13px; color: #64748b; margin: 0; }
-        
         @media (min-width: 768px) {
             .t-hero-title { font-size: 38px; }
             .t-stat-value { font-size: 40px; }
@@ -2623,8 +2588,6 @@
             .t-ai-cards { grid-template-columns: 1fr 1fr; }
             .t-systems-grid { grid-template-columns: repeat(3, 1fr); }
             .t-results-grid { grid-template-columns: repeat(4, 1fr); }
-            .t-pricing-grid { grid-template-columns: repeat(3, 1fr); }
-            .t-price-card.t-popular { transform: scale(1.02); }
         }
         
         /* AI Assistants Block */
@@ -2759,7 +2722,6 @@
             <div class="nav-tab" onclick="navigateToSection(3)">3. Діагностика</div>
             <div class="nav-tab" onclick="navigateToSection(4)">4. Калькулятор</div>
             <div class="nav-tab" onclick="navigateToSection(5)">5. Система</div>
-            <div class="nav-tab" onclick="navigateToSection(6)">6. Тарифи</div>
         </div>
         <!-- PROGRESS BAR -->
         <div class="progress-bar">
@@ -3227,13 +3189,9 @@
                         <div class="t-stat"><div class="t-stat-value">10</div><div class="t-stat-label">років</div></div>
                     </div>
                     <div class="t-hero-cta">
-                        <a href="#t-pricing" class="t-btn t-btn-primary">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                            Обрати тариф
-                        </a>
-                        <a href="https://wa.me/380661807563" class="t-btn t-btn-outline">
+                        <a href="https://wa.me/380661807563" class="t-btn t-btn-primary">
                             <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                            WhatsApp
+                            Зв'язатися в WhatsApp
                         </a>
                     </div>
                 </div>
@@ -4463,115 +4421,13 @@
             
             <div class="nav-buttons">
                 <button class="nav-btn" onclick="navigateToSection(4)">Назад</button>
-                <button class="nav-btn" onclick="navigateToSection(6)">Далі: Тарифи</button>
-            </div>
-        </div>
-
-        <!-- ==================== SECTION 6: ТАРИФИ ==================== -->
-        <div class="section hidden" id="section6">
-            <div class="section-header">
-                <h2><span class="section-number">6</span> Тарифи</h2>
-            </div>
-            
-            <div class="talko-embed">
-                <!-- Pricing -->
-                <div class="t-section" id="t-pricing">
-                    <span class="t-badge t-badge-green">Тарифи</span>
-                    <h2 class="t-title" style="color:#1a1a1a;">Виберіть ваш тариф</h2>
-
-                    <div class="t-timer-block">
-                        <div class="t-timer-header"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg><h3>Спеціальна ціна 24 години</h3></div>
-                        <p class="t-timer-subtitle">Після діагностики діє знижка</p>
-                        <div class="t-timer">
-                            <div class="t-timer-unit"><div class="t-timer-value" id="t-hours">23</div><div class="t-timer-label-sm">год</div></div>
-                            <div class="t-timer-unit"><div class="t-timer-value" id="t-minutes">59</div><div class="t-timer-label-sm">хв</div></div>
-                            <div class="t-timer-unit"><div class="t-timer-value" id="t-seconds">59</div><div class="t-timer-label-sm">сек</div></div>
-                        </div>
-                        <div class="t-timer-btns">
-                            <button class="t-btn t-btn-primary" onclick="startTimer24()">Запустити</button>
-                            <button class="t-btn t-btn-outline" onclick="resetTimerNow()">Скинути</button>
-                        </div>
-                    </div>
-
-                    <div class="t-pricing-grid">
-                        <!-- START -->
-                        <div class="t-price-card">
-                            <div class="t-price-header">
-                                <h3 class="t-price-name">START</h3>
-                                <p class="t-price-desc">Самостійне впровадження</p>
-                                <div class="t-price-old">1 350 EUR</div>
-                                <div class="t-price-current">890 <span>EUR</span></div>
-                                <div class="t-price-save">−460 EUR</div>
-                            </div>
-                            <ul class="t-price-features">
-                                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg>AI-платформа 12 міс</li>
-                                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg>Підтримка 3 міс</li>
-                                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg>Всі шаблони</li>
-                                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg>База знань + відео</li>
-                            </ul>
-                            <a href="https://secure.wayforpay.com/button/bd76f3f0d1ec0" target="_blank" class="t-btn t-btn-primary t-price-cta">Оплатити</a>
-                            <div class="t-price-installment"><strong>Розстрочка:</strong> ~149 EUR/міс × 6 міс</div>
-                        </div>
-
-                        <!-- PRO -->
-                        <div class="t-price-card t-popular">
-                            <div class="t-price-badge">Популярний</div>
-                            <div class="t-price-header">
-                                <h3 class="t-price-name">PRO GROUP</h3>
-                                <p class="t-price-desc">З наставником у групі</p>
-                                <div class="t-price-old">2 550 EUR</div>
-                                <div class="t-price-current">1 890 <span>EUR</span></div>
-                                <div class="t-price-save">−660 EUR</div>
-                            </div>
-                            <ul class="t-price-features">
-                                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg>Все зі Start</li>
-                                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg>Група до 15 осіб</li>
-                                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg>Zoom щотижня</li>
-                                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg>13 модулів з ДЗ</li>
-                                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg>Аналіз бізнесу</li>
-                            </ul>
-                            <a href="https://secure.wayforpay.com/button/b4a70b1a3c380" target="_blank" class="t-btn t-btn-primary t-price-cta">Оплатити</a>
-                            <div class="t-price-installment"><strong>Розстрочка:</strong> ~315 EUR/міс × 6 міс</div>
-                        </div>
-
-                        <!-- ELITE -->
-                        <div class="t-price-card">
-                            <div class="t-price-header">
-                                <h3 class="t-price-name">ELITE</h3>
-                                <p class="t-price-desc">Під ключ</p>
-                                <div class="t-price-old">4 500 EUR</div>
-                                <div class="t-price-current">3 890 <span>EUR</span></div>
-                                <div class="t-price-save">−610 EUR</div>
-                            </div>
-                            <ul class="t-price-features">
-                                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg>Все з PRO</li>
-                                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg>1-на-1 (2р/тиждень)</li>
-                                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg>Персональний коучинг</li>
-                                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg>"Зробимо за вас"</li>
-                                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><polyline points="20 6 9 17 4 12"/></svg>Підтримка 24/7</li>
-                            </ul>
-                            <a href="https://secure.wayforpay.com/button/bd32b6a919ca8" target="_blank" class="t-btn t-btn-primary t-price-cta">Оплатити</a>
-                            <div class="t-price-installment"><strong>Розстрочка:</strong> ~649 EUR/міс × 6 міс</div>
-                        </div>
-                    </div>
-
-                    <!-- Lock Price -->
-                    <div class="t-lock-block">
-                        <div class="t-lock-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
-                        <div class="t-lock-content"><h4>Зафіксувати ціну — 100 EUR</h4><p>Оплатіть 100 EUR зараз і розпочніть у будь-який зручний час.</p></div>
-                        <a href="https://secure.wayforpay.com/button/be1ed8d68908e" target="_blank" class="t-btn t-btn-outline">Зафіксувати</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="nav-buttons">
-                <button class="nav-btn" onclick="navigateToSection(5)">Назад</button>
-                <button class="nav-btn" onclick="exportFullReport()" style="background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);">
+                <button class="nav-btn primary" onclick="exportFullReport()">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                    Повний звіт Excel
+                    Завантажити звіт
                 </button>
             </div>
         </div>
+
     </div>
     <script>
         // ===== DIAGNOSTIC MODULES DATA =====
@@ -5229,43 +5085,11 @@
             XLSX.utils.book_append_sheet(wb, XLSX.utils.json_to_sheet(diagnosticData), 'Діагностика');
             XLSX.writeFile(wb, 'TALKO_Full_Report_' + new Date().toISOString().split('T')[0] + '.xlsx');
         }
-        // ===== TIMER =====
-        let timerInterval = null;
-        let timerEndTime = null;
-        function initTimer() { updateTimerDisplay(23, 59, 59); }
-        function startTimer24() {
-            timerEndTime = Date.now() + (24 * 60 * 60 * 1000);
-            document.getElementById('timerMsg').textContent = 'Таймер запущено!';
-            if (timerInterval) clearInterval(timerInterval);
-            timerInterval = setInterval(tickTimer, 1000);
-            tickTimer();
-        }
-        function resetTimerNow() {
-            timerEndTime = null;
-            if (timerInterval) clearInterval(timerInterval);
-            updateTimerDisplay(23, 59, 59);
-            document.getElementById('timerMsg').textContent = 'Таймер скинуто';
-        }
-        function tickTimer() {
-            if (!timerEndTime) return;
-            const remaining = timerEndTime - Date.now();
-            if (remaining <= 0) { updateTimerDisplay(0, 0, 0); document.getElementById('timerMsg').textContent = 'Час вийшов!'; clearInterval(timerInterval); return; }
-            const h = Math.floor(remaining / 3600000);
-            const m = Math.floor((remaining % 3600000) / 60000);
-            const s = Math.floor((remaining % 60000) / 1000);
-            updateTimerDisplay(h, m, s);
-        }
-        function updateTimerDisplay(h, m, s) {
-            document.getElementById('t-hours').textContent = String(h).padStart(2, '0');
-            document.getElementById('t-minutes').textContent = String(m).padStart(2, '0');
-            document.getElementById('t-seconds').textContent = String(s).padStart(2, '0');
-        }
         // ===== INIT =====
         document.addEventListener('DOMContentLoaded', function() {
             renderDiagnosticModules();
             calculateModuleStats();
             calculateLosses();
-            initTimer();
             const revenueInput = document.getElementById('revenue-input');
             if (revenueInput) revenueInput.addEventListener('input', calculateLosses);
         });
