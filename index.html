@@ -3536,7 +3536,7 @@
             background: #fff;
             border-radius: var(--radius);
             border: 3px solid var(--border);
-            overflow: hidden;
+            overflow: visible;
             position: relative;
             transition: all 0.3s ease;
         }
@@ -3554,6 +3554,7 @@
         .pricing-card-accent {
             height: 6px;
             background: var(--border);
+            border-radius: var(--radius) var(--radius) 0 0;
         }
         .pricing-card.start .pricing-card-accent { background: var(--blue); }
         .pricing-card.featured .pricing-card-accent { background: var(--primary); }
