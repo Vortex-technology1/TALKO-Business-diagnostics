@@ -4072,6 +4072,288 @@
                 font-size: 1.5rem;
             }
         }
+        
+        /* FAQ Section */
+        .pricing-faq-section {
+            background: #fff;
+            border-radius: var(--radius);
+            padding: 30px;
+            margin: 30px 0;
+            border: 2px solid var(--border);
+        }
+        .pricing-faq-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+        .pricing-faq-header svg {
+            color: var(--primary);
+        }
+        .pricing-faq-header h3 {
+            font-size: 1.3rem;
+            color: var(--text-dark);
+            margin: 0;
+        }
+        
+        .pricing-faq-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .pricing-faq-item {
+            background: var(--bg-light);
+            border-radius: 12px;
+            padding: 20px;
+        }
+        .faq-question {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-weight: 700;
+            color: var(--text-dark);
+            font-size: 1rem;
+            margin-bottom: 12px;
+        }
+        .faq-question svg {
+            color: var(--orange);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .faq-answer {
+            padding-left: 30px;
+        }
+        .faq-answer p {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+        .faq-answer ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .faq-answer li {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            padding: 4px 0 4px 20px;
+            position: relative;
+        }
+        .faq-answer li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+        }
+        
+        /* Subscription Offer */
+        .subscription-offer {
+            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+            border: 2px solid var(--primary);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        .subscription-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+        .subscription-icon {
+            width: 56px;
+            height: 56px;
+            background: var(--primary);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .subscription-icon svg {
+            color: #fff;
+        }
+        .subscription-header h4 {
+            font-size: 1.2rem;
+            color: var(--text-dark);
+            margin: 0 0 4px 0;
+        }
+        .subscription-header p {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            margin: 0;
+        }
+        
+        .subscription-benefits {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9rem;
+            color: var(--text-dark);
+        }
+        .benefit-item svg {
+            color: var(--primary);
+            flex-shrink: 0;
+        }
+        
+        .subscription-price {
+            background: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+        }
+        .sub-price-value {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            line-height: 1;
+        }
+        .sub-price-value span {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-gray);
+        }
+        .sub-price-note {
+            font-size: 0.85rem;
+            color: var(--text-gray);
+            margin-top: 8px;
+        }
+        
+        /* Individual Support */
+        .individual-support {
+            background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%);
+            border: 2px solid var(--purple);
+            border-radius: 16px;
+            padding: 24px;
+        }
+        .individual-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+        .individual-header svg {
+            color: var(--purple);
+        }
+        .individual-header h4 {
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            margin: 0;
+        }
+        .individual-desc {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .individual-options {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+        .individual-option {
+            background: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            border: 2px solid var(--border);
+            position: relative;
+        }
+        .individual-option.recommended {
+            border-color: var(--purple);
+        }
+        .option-badge {
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--purple);
+            color: #fff;
+            padding: 4px 12px;
+            border-radius: 10px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+        .option-name {
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+            text-align: center;
+        }
+        .individual-option.recommended .option-name {
+            margin-top: 8px;
+        }
+        .option-price {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--purple);
+            text-align: center;
+            margin-bottom: 8px;
+        }
+        .option-price span {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-gray);
+        }
+        .option-desc {
+            font-size: 0.8rem;
+            color: var(--text-gray);
+            text-align: center;
+            line-height: 1.5;
+        }
+        
+        .individual-note {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            font-size: 0.85rem;
+            color: var(--text-gray);
+            background: rgba(255,255,255,0.7);
+            padding: 12px;
+            border-radius: 8px;
+        }
+        .individual-note svg {
+            color: var(--purple);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        
+        @media (max-width: 768px) {
+            .pricing-faq-grid,
+            .subscription-benefits,
+            .individual-options {
+                grid-template-columns: 1fr;
+            }
+        }
+        @media (max-width: 600px) {
+            .pricing-faq-section {
+                padding: 20px 16px;
+            }
+            .subscription-offer,
+            .individual-support {
+                padding: 20px 16px;
+            }
+            .subscription-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            .sub-price-value {
+                font-size: 2rem;
+            }
+            .option-price {
+                font-size: 1.5rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -6027,6 +6309,109 @@
                         <div class="promo-save">Економія 1 000 EUR</div>
                         <button class="promo-btn elite">Оплатити ELITE</button>
                         <div class="promo-installment">~750 EUR/міс × 6 міс</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- FAQ / Fears Section -->
+            <div class="pricing-faq-section">
+                <div class="pricing-faq-header">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                    <h3>Питання, які виникають у 90% клієнтів</h3>
+                </div>
+                
+                <div class="pricing-faq-grid">
+                    <!-- Question 1 -->
+                    <div class="pricing-faq-item">
+                        <div class="faq-question">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                            А якщо я не встигну пройти за 3 місяці?
+                        </div>
+                        <div class="faq-answer">
+                            <p>Доступ до платформи — <strong>12 місяців</strong>. Але навіть після цього ви не втрачаєте нічого.</p>
+                            <p>Ми щотижня випускаємо нових AI-асистентів, нові уроки, оновлюємо базу знань. Платформа живе і розвивається.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Question 2 -->
+                    <div class="pricing-faq-item">
+                        <div class="faq-question">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                            Що буде після проходження програми?
+                        </div>
+                        <div class="faq-answer">
+                            <p>Після основної програми у вас є вибір:</p>
+                            <ul>
+                                <li>Працювати самостійно з отриманими інструментами</li>
+                                <li>Залишитись у системі з постійними оновленнями</li>
+                                <li>Перейти на індивідуальний супровід</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Subscription Offer -->
+                <div class="subscription-offer">
+                    <div class="subscription-header">
+                        <div class="subscription-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                        </div>
+                        <div>
+                            <h4>TALKO Club+ — доступ до розборів</h4>
+                            <p>Дивитесь, як вирішуються проблеми інших бізнесів</p>
+                        </div>
+                    </div>
+                    
+                    <div class="subscription-benefits">
+                        <div class="benefit-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span>Записи всіх групових розборів</span>
+                        </div>
+                        <div class="benefit-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span>Нові кейси щотижня</span>
+                        </div>
+                        <div class="benefit-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span>Реальні рішення реальних проблем</span>
+                        </div>
+                        <div class="benefit-item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span>Вчитесь на чужих помилках</span>
+                        </div>
+                    </div>
+                    
+                    <div class="subscription-price">
+                        <div class="sub-price-value">50 <span>EUR/міс</span></div>
+                        <div class="sub-price-note">Доступ до бібліотеки розборів без особистої участі у сесіях</div>
+                    </div>
+                </div>
+                
+                <!-- Individual Support -->
+                <div class="individual-support">
+                    <div class="individual-header">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        <h4>Хочете швидше? Індивідуальний супровід</h4>
+                    </div>
+                    <p class="individual-desc">Для тих, хто хоче максимальну швидкість впровадження та персональну увагу після основної програми.</p>
+                    
+                    <div class="individual-options">
+                        <div class="individual-option recommended">
+                            <div class="option-badge">Рекомендовано</div>
+                            <div class="option-name">2 зустрічі на тиждень</div>
+                            <div class="option-price">500 <span>EUR/міс</span></div>
+                            <div class="option-desc">Максимальний темп. Щотижневий розбір + домашні завдання</div>
+                        </div>
+                        <div class="individual-option">
+                            <div class="option-name">1 зустріч на тиждень</div>
+                            <div class="option-price">250 <span>EUR/міс</span></div>
+                            <div class="option-desc">Підтримуючий темп. Контроль + корекція курсу</div>
+                        </div>
+                    </div>
+                    
+                    <div class="individual-note">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                        Формат обговорюємо індивідуально після проходження основної програми, в залежності від ваших цілей
                     </div>
                 </div>
             </div>
