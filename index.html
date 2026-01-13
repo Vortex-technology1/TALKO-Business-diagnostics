@@ -2202,6 +2202,84 @@
             font-size: 13px;
             color: var(--primary);
         }
+        
+        /* Accordion Preview - expanded description under title */
+        .accordion-preview {
+            margin-top: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .preview-block {
+            display: flex;
+            gap: 12px;
+            background: rgba(34, 197, 94, 0.08);
+            border-radius: 12px;
+            padding: 16px;
+            border-left: 3px solid var(--primary);
+        }
+        .preview-num {
+            width: 28px;
+            height: 28px;
+            min-width: 28px;
+            background: var(--primary);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .preview-content {
+            flex: 1;
+        }
+        .preview-content strong {
+            color: #fff;
+            font-size: 15px;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .preview-content ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 10px 0;
+        }
+        .preview-content li {
+            color: rgba(255,255,255,0.8);
+            font-size: 13px;
+            padding: 3px 0 3px 18px;
+            position: relative;
+            line-height: 1.5;
+        }
+        .preview-content li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-size: 12px;
+        }
+        .preview-result {
+            color: var(--primary);
+            font-size: 13px;
+            font-weight: 600;
+            margin: 0;
+            padding-top: 6px;
+            border-top: 1px solid rgba(34, 197, 94, 0.2);
+        }
+        
+        @media (max-width: 600px) {
+            .preview-block {
+                padding: 12px;
+            }
+            .preview-content strong {
+                font-size: 14px;
+            }
+            .preview-content li {
+                font-size: 12px;
+            }
+        }
+        
         .accordion-arrow {
             color: rgba(255,255,255,0.5);
             transition: transform 0.3s;
@@ -4864,46 +4942,6 @@
             
             <!-- TALKO LANDING EMBED -->
             <div class="talko-embed">
-                <!-- Hero -->
-                <div class="t-hero">
-                    <div class="t-hero-badge">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-                        Трансформація за 65 днів
-                    </div>
-                    <h1 class="t-hero-title">Переведіть бізнес у <span class="hl">керований режим</span></h1>
-                    <p class="t-hero-subtitle">80–90% рішень без вас, процеси працюють стабільно, прибуток росте прогнозовано</p>
-                    <div class="t-hero-stats">
-                        <div class="t-stat"><div class="t-stat-value">65</div><div class="t-stat-label">днів</div></div>
-                        <div class="t-stat"><div class="t-stat-value">150+</div><div class="t-stat-label">компаній</div></div>
-                        <div class="t-stat"><div class="t-stat-value">10</div><div class="t-stat-label">років</div></div>
-                    </div>
-                    <div class="t-hero-cta">
-                        <a href="https://wa.me/380661807563" class="t-btn t-btn-primary">
-                            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                            Зв'язатися в WhatsApp
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Problems -->
-                <div class="t-section t-section-light">
-                    <span class="t-badge">Знайомо?</span>
-                    <h2 class="t-title">Симптоми відсутності системи</h2>
-                    <div class="t-problems-grid">
-                        <div class="t-problem-card">
-                            <div class="t-problem-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-                            <div><h4>Втомилися контролювати</h4><p>10-14 годин роботи, без вас нічого не рухається. Відпустка неможлива.</p></div>
-                        </div>
-                        <div class="t-problem-card">
-                            <div class="t-problem-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
-                            <div><h4>Прибуток нестабільний</h4><p>Гроші зникають. Немає чітких цифр. Все залежить від випадковостей.</p></div>
-                        </div>
-                        <div class="t-problem-card">
-                            <div class="t-problem-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-                            <div><h4>Клієнти хаотично</h4><p>Сьогодні густо — завтра пусто. Маркетинг працює ривками.</p></div>
-                        </div>
-                    </div>
-                </div>
 
                 <!-- What You Buy Section -->
                 <div class="t-section t-section-dark">
@@ -4924,245 +4962,10 @@
                     </div>
                 </div>
 
-                <!-- Simple Explanation -->
-                <div class="t-section t-section-dark">
-                    <span class="t-badge t-badge-green">TALKO Management System</span>
-                    <h2 class="t-title">Просте пояснення</h2>
-                    <h3 class="t-section-subtitle">Уявіть бізнес як автомобіль</h3>
-                    
-                    <div class="t-car-analogy">
-                        <div class="t-car-problem">
-                            <h4>Зараз у більшості власників:</h4>
-                            <p class="t-car-headline">Машина їде, але...</p>
-                            <ul>
-                                <li>Немає нормальної панелі приладів</li>
-                                <li>Постійно щось стукає</li>
-                                <li>Водій мусить тримати кермо обома руками 24/7</li>
-                            </ul>
-                            <p><strong>Ви не можете:</strong></p>
-                            <ul class="t-red-list">
-                                <li>Відпустити кермо</li>
-                                <li>Відійти</li>
-                                <li>Не втручатися</li>
-                            </ul>
-                            <p class="t-warning">Бо інакше — все розсиплеться.</p>
-                        </div>
-                        <div class="t-car-solution">
-                            <h4>TALKO Management System — це:</h4>
-                            <ul class="t-green-list">
-                                <li>Панель приладів</li>
-                                <li>Правила руху</li>
-                                <li>Навігатор</li>
-                                <li>Чіткі інструкції для всіх, хто "їде" разом з вами</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Owner Mode -->
-                <div class="t-section t-section-dark">
-                    <span class="t-badge t-badge-green">Режим 1</span>
-                    <h2 class="t-title">Режим для ВЛАСНИКА</h2>
-                    <p class="t-subtitle">"Керує через цифри, а не через біганину"</p>
-                    
-                    <div class="t-before-after-grid">
-                        <div class="t-ba-card t-ba-before">
-                            <h4>Як виглядає реальність ДО</h4>
-                            <p>Вам постійно дзвонять або пишуть:</p>
-                            <ul class="t-quote-list">
-                                <li>"Що робити?"</li>
-                                <li>"Як правильно?"</li>
-                                <li>"А можна так?"</li>
-                            </ul>
-                            <p><strong>Ви:</strong></p>
-                            <ul>
-                                <li>Нагадуєте</li>
-                                <li>Перевіряєте</li>
-                                <li>Виправляєте</li>
-                            </ul>
-                            <p>Команда щось робить, але:</p>
-                            <ul class="t-red-list">
-                                <li>Незрозуміло, чи зробили</li>
-                                <li>Чи зробили правильно</li>
-                                <li>Де саме проблема</li>
-                            </ul>
-                            <p class="t-feeling"><strong>Ви керуєте відчуттями:</strong><br>"Мені здається, що просіли"<br>"Мені здається, що хтось не допрацьовує"</p>
-                        </div>
-                        <div class="t-ba-card t-ba-after">
-                            <h4>Як виглядає реальність ПІСЛЯ</h4>
-                            <p class="t-highlight">Ви відкриваєте <strong>Прибуткову Панель</strong><br><span>(це як панель приладів у машині)</span></p>
-                            <p><strong>І бачите:</strong></p>
-                            <div class="t-after-item">
-                                <strong>Усі процеси оцифровані</strong>
-                                <p>Не "на словах", а в цифрах: скільки заявок, скільки записів/продажів, скільки грошей зайшло, скільки витратили, де затримки, де просідання</p>
-                            </div>
-                            <div class="t-after-item">
-                                <strong>Реальний стан бізнесу — без "здається"</strong>
-                                <p>Вам не потрібно питати: "Як у нас справи?" Цифри самі показують: що працює, що не працює, де вузьке місце</p>
-                            </div>
-                            <div class="t-after-item">
-                                <strong>Звіти замість пояснень</strong>
-                                <p>Команда не "розповідає, як старалася". Вона здає: результат, у чіткому форматі, за зрозумілими критеріями</p>
-                            </div>
-                            <div class="t-after-item">
-                                <strong>Контроль без біганини</strong>
-                                <p>Раніше: "Я мушу все перевіряти, інакше завалиться"<br>Тепер: "Я заходжу і бачу"</p>
-                            </div>
-                            <p class="t-conclusion"><strong>Ви керуєте системою, а не людьми.</strong></p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Employee Mode -->
-                <div class="t-section t-section-dark">
-                    <span class="t-badge t-badge-green">Режим 2</span>
-                    <h2 class="t-title">Режим для СПІВРОБІТНИКА</h2>
-                    <p class="t-subtitle">"Знає, що робити — і приходить з рішенням, а не з питанням"</p>
-                    
-                    <div class="t-before-after-grid">
-                        <div class="t-ba-card t-ba-before">
-                            <h4>Як виглядає реальність ДО</h4>
-                            <p>Співробітник отримує задачу, але:</p>
-                            <ul class="t-red-list">
-                                <li>Не до кінця розуміє, що саме потрібно</li>
-                                <li>Не знає, як правильно</li>
-                                <li>Боїться зробити помилку</li>
-                            </ul>
-                            <p><strong>Тому він:</strong></p>
-                            <ul>
-                                <li>Задає багато питань</li>
-                                <li>Або робить "як вийшло"</li>
-                                <li>Або тягне час</li>
-                            </ul>
-                        </div>
-                        <div class="t-ba-card t-ba-after">
-                            <h4>Як виглядає реальність ПІСЛЯ</h4>
-                            <p class="t-highlight">У співробітника є <strong>Чітка Система Роботи</strong></p>
-                            <div class="t-after-item">
-                                <strong>Список поточних і регулярних задач</strong>
-                                <p>Він відкриває систему і бачить: що робити сьогодні, що робити щотижня, що робити щомісяця. Як у школі: сьогодні — одні уроки, завтра — інші.</p>
-                            </div>
-                            <div class="t-after-item">
-                                <strong>Чіткий результат</strong>
-                                <p>Не "попрацюй нормально", а: який продукт він має здати, що саме вважається "зроблено"</p>
-                            </div>
-                            <div class="t-after-item">
-                                <strong>Розуміння, що таке "зроблено правильно"</strong>
-                                <p>Є критерії: що має бути в результаті, які помилки неприпустимі, які перевірки потрібно пройти</p>
-                            </div>
-                            <div class="t-after-item">
-                                <strong>Інструкції на всі типові ситуації</strong>
-                                <p>Наприклад: якщо клієнт не прийшов, якщо не оплатили, якщо виник конфлікт, якщо постачальник зірвав термін, якщо незрозуміло, хто відповідальний.</p>
-                                <p>І там чітко написано: зроби це, потім це, якщо так — дієш так, якщо ні — ескалуєш ось сюди</p>
-                            </div>
-                            <div class="t-after-item">
-                                <strong>Чіткий формат звіту</strong>
-                                <p>Не "щось написати в чат", а: що написати, куди, в якому форматі — щоб керівник одразу зрозумів результат.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- AI Role -->
-                <div class="t-section t-section-dark">
-                    <span class="t-badge t-badge-green">Роль AI (дуже важливо)</span>
-                    <h2 class="t-title">AI у системі — не "мозок замість людини" і не начальник</h2>
-                    <p class="t-subtitle">AI — це навігатор і підказка, як Google Maps</p>
-                    
-                    <div class="t-ai-maps-analogy">
-                        <div class="t-maps-box">
-                            <h4><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24" style="vertical-align: middle; margin-right: 8px;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Google Maps:</h4>
-                            <ul>
-                                <li>Не їде за вас</li>
-                                <li>Але показує маршрут</li>
-                                <li>Попереджає про проблеми</li>
-                                <li>Пропонує 2–3 варіанти</li>
-                                <li>Економить час і нерви</li>
-                            </ul>
-                            <p class="t-maps-conclusion"><strong>Так само і тут.</strong></p>
-                        </div>
-                    </div>
-                    
-                    <div class="t-ai-roles-grid">
-                        <div class="t-ai-role-card">
-                            <h4>AI для СПІВРОБІТНИКА</h4>
-                            <p class="t-ai-role-subtitle">Допомагає працювати правильно, а не "думати замість"</p>
-                            <p><strong>Він:</strong></p>
-                            <ul class="t-green-list">
-                                <li>Підказує, що робити далі крок за кроком</li>
-                                <li>Якщо ситуація нестандартна — показує 3 допустимі варіанти, дозволені правилами</li>
-                                <li>Збирає дані і рекомендує оптимальний варіант</li>
-                                <li>Допомагає оформити службову записку або звіт</li>
-                                <li>Нагадує про дедлайни</li>
-                            </ul>
-                            <p class="t-ai-result"><strong>Результат:</strong> співробітник менше питає, менше помиляється, швидше працює.</p>
-                        </div>
-                        <div class="t-ai-role-card">
-                            <h4>AI для ВЛАСНИКА</h4>
-                            <p class="t-ai-role-subtitle">Допомагає бачити і думати швидше, але не забирає рішення</p>
-                            <p><strong>Він:</strong></p>
-                            <ul class="t-green-list">
-                                <li>Показує вузькі місця</li>
-                                <li>Рахує сценарії "що буде, якщо…"</li>
-                                <li>Показує плюси і мінуси варіантів</li>
-                                <li>Допомагає сформувати план і розбити його на задачі</li>
-                            </ul>
-                            <p class="t-ai-result"><strong>Фінальні рішення завжди за вами.</strong></p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Transformation -->
-                <div class="t-section t-section-dark">
-                    <span class="t-badge t-badge-green">Було / Стало</span>
-                    <h2 class="t-title">Трансформація</h2>
-                    
-                    <div class="t-transformation-grid">
-                        <div class="t-trans-card t-trans-before">
-                            <h4>БУЛО</h4>
-                            <div class="t-trans-item">
-                                <strong>Співробітник:</strong>
-                                <p class="t-quote">"Я не знаю, скажіть"</p>
-                            </div>
-                            <div class="t-trans-item">
-                                <strong>Власник:</strong>
-                                <p class="t-quote">"Я зараз зайнятий, але без мене ніяк"</p>
-                            </div>
-                            <p class="t-trans-result t-red">Результат: хаос, нерви, постійна участь власника</p>
-                        </div>
-                        <div class="t-trans-card t-trans-after">
-                            <h4>СТАЛО</h4>
-                            <div class="t-trans-item">
-                                <strong>Співробітник:</strong>
-                                <p class="t-quote">"Ось задача, ось варіанти, рекомендую №2"</p>
-                            </div>
-                            <div class="t-trans-item">
-                                <strong>Власник:</strong>
-                                <p class="t-quote">"Я дивлюся цифри і змінюю правила"</p>
-                            </div>
-                            <p class="t-trans-result t-green">Результат: порядок, передбачуваність, зростання прибутку</p>
-                        </div>
-                    </div>
-                    
-                    <div class="t-one-phrase">
-                        <h4>Одна фраза, яка пояснює все:</h4>
-                        <p class="t-phrase-main">Це правила + підказки для бізнесу, щоб він працював правильно, навіть коли власник не поруч.</p>
-                    </div>
-                    
-                    <div class="t-honest-note">
-                        <h4>Важливе уточнення (чесно):</h4>
-                        <p>Я не роблю з будь-кого "супер-менеджера".</p>
-                        <p class="t-honest-main"><strong>Я роблю так, що навіть звичайна людина працює передбачувано, бо система не дозволяє робити дурниці.</strong></p>
-                    </div>
-                </div>
-
 
                 <!-- 13 MODULES ACCORDION - FULL PDF TEXT -->
                 <div class="t-section t-section-dark" id="modules-section">
                     <span class="t-badge t-badge-green">Етап 1: Операційна система</span>
-                    <h2 class="t-title">13 модулів трансформації</h2>
-                    <p class="t-subtitle">Ці 13 систем — фундамент вашого бізнесу. Проблеми тут = втрати грошей щодня.<br><em style="color: var(--primary); font-size: 14px;">Натисніть на модуль, щоб побачити повний опис</em></p>
-                    
                     <!-- Modules Accordion -->
                     <div class="modules-accordion">
                         
@@ -5173,6 +4976,36 @@
                                 <div class="accordion-title">
                                     <h4>Система розпорядження + таск менеджер</h4>
                                     <span>Сказав один раз — зробили правильно</span>
+                                    <div class="accordion-preview">
+                                        <div class="preview-block">
+                                            <div class="preview-num">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                                            </div>
+                                            <div class="preview-content">
+                                                <strong>Завдання виконуються з першого разу</strong>
+                                                <ul>
+                                                    <li>Ви ставите завдання один раз</li>
+                                                    <li>Його виконують вчасно, без перепитувань</li>
+                                                    <li>Ви не бігаєте за людьми і не питаєте «ну що там?»</li>
+                                                    <li>Ви бачите звіт: що зроблено, в якому обсязі, з яким результатом</li>
+                                                </ul>
+                                                <p class="preview-result">Система замінює нагадування, контроль і пояснення.</p>
+                                            </div>
+                                        </div>
+                                        <div class="preview-block">
+                                            <div class="preview-num">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                                            </div>
+                                            <div class="preview-content">
+                                                <strong>Люди знають, що робити щодня — без вас</strong>
+                                                <ul>
+                                                    <li>Кожен співробітник чітко розуміє: що робити зранку, що в обід, що у вівторок, що у середу</li>
+                                                    <li>Пріоритети вже розставлені системою, а не вашим голосом</li>
+                                                </ul>
+                                                <p class="preview-result">Немає хаосу "що робити зараз?" — є зрозумілий ритм роботи.</p>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="accordion-problem-badge" id="accordion-badge-orders"></div>
                                 <div class="accordion-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><polyline points="6 9 12 15 18 9"/></svg></div>
@@ -5254,6 +5087,24 @@
                                 <div class="accordion-title">
                                     <h4>AI-помічник RADAR</h4>
                                     <span>Приходять з варіантами рішень, а не з питанням "що мені робити?"</span>
+                                    <div class="accordion-preview">
+                                        <div class="preview-block">
+                                            <div class="preview-num">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+                                            </div>
+                                            <div class="preview-content">
+                                                <strong>Питання = рішення, а не проблеми</strong>
+                                                <p style="color: rgba(255,255,255,0.8); font-size: 13px; margin-bottom: 10px;">Якщо у співробітника виникає питання:</p>
+                                                <ul>
+                                                    <li>він приходить не з проблемою</li>
+                                                    <li>а з усіма необхідними даними</li>
+                                                    <li>з 2–3 варіантами рішень</li>
+                                                    <li>і з ініціативою взяти відповідальність за виконання</li>
+                                                </ul>
+                                                <p class="preview-result">Ви не "рятуєте", а приймаєте рішення на основі підготовлених варіантів.</p>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="accordion-problem-badge" id="accordion-badge-radar"></div>
                                 <div class="accordion-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><polyline points="6 9 12 15 18 9"/></svg></div>
@@ -5336,108 +5187,31 @@
                             </div>
                         </div>
 
-                        <!-- Module 3 -->
-                        <div class="accordion-item" data-module="3" data-diagnostic-id="compass">
+
+                        <!-- Module 4 -->
+                        <div class="accordion-item" data-module="3" data-diagnostic-id="guide">
                             <div class="accordion-header" onclick="toggleAccordion(this)">
                                 <div class="accordion-num">3</div>
                                 <div class="accordion-title">
-                                    <h4>COMPASS (Компас)</h4>
-                                    <span>Перестаєте гадати — починаєте обирати усвідомлено</span>
-                                </div>
-                                <div class="accordion-problem-badge" id="accordion-badge-compass"></div>
-                                <div class="accordion-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><polyline points="6 9 12 15 18 9"/></svg></div>
-                            </div>
-                            <div class="accordion-body">
-                                <div class="accordion-content">
-                                    <div class="accordion-problem-section">
-                                        <h5><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg> У чому проблема зараз</h5>
-                                        <p>Більшість рішень у бізнесі приймаються так:</p>
-                                        <ul class="accordion-red-list">
-                                            <li>"мені здається"</li>
-                                            <li>"я так відчуваю"</li>
-                                            <li>"минулого разу спрацювало"</li>
-                                        </ul>
-                                        <p>Іноді ви влучаєте. Іноді — ні. А наслідки завжди доводиться розгрібати вам.</p>
-                                        <p class="accordion-warning">Ще одна проблема — ви бачите лише ті варіанти, які вже були у вашому досвіді. Те, з чим ви ще не стикались, часто навіть не потрапляє в поле зору.</p>
-                                    </div>
-                                    
-                                    <div class="accordion-solution-section">
-                                        <h5><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Що ми змінюємо</h5>
-                                        <p>Ми прибираємо рішення "з голови" і замінюємо їх <strong>вибором з прорахованих варіантів</strong>.</p>
-                                        <p class="accordion-highlight">Ви не перестаєте вирішувати. Ви перестаєте ризикувати наосліп.</p>
-                                    </div>
-                                    
-                                    <div class="accordion-ai-section">
-                                        <h5><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg> Як працює COMPASS</h5>
-                                        
-                                        <p><strong>1. Ви описуєте ситуацію простими словами, наприклад:</strong></p>
-                                        <ul class="accordion-list">
-                                            <li>"Думаю відкривати другу точку"</li>
-                                            <li>"Не розумію, чи варто звільняти менеджера"</li>
-                                            <li>"Хочу підняти ціни, але боюся втратити клієнтів"</li>
-                                        </ul>
-                                        
-                                        <p><strong>2. Система допомагає розкласти ситуацію:</strong></p>
-                                        <ul class="accordion-list">
-                                            <li>що є зараз</li>
-                                            <li>які обмеження</li>
-                                            <li>які дані вже є</li>
-                                            <li>що буде, якщо нічого не робити</li>
-                                        </ul>
-                                        
-                                        <p><strong>3. Далі ви бачите кілька можливих шляхів:</strong></p>
-                                        <div class="accordion-variants">
-                                            <div class="variant-item">варіант А</div>
-                                            <div class="variant-item">варіант Б</div>
-                                            <div class="variant-item">варіант В</div>
-                                        </div>
-                                        <p>Для кожного варіанту показано:</p>
-                                        <ul class="accordion-list">
-                                            <li>скільки це приблизно коштує</li>
-                                            <li>що може дати</li>
-                                            <li>які ризики</li>
-                                            <li>які наслідки через 1–3–6 місяців</li>
-                                        </ul>
-                                        
-                                        <p><strong>4. Ви не сидите і не "ламаєте голову".</strong> Ви дивитесь на готові сценарії і обираєте той, який вам підходить.</p>
-                                        
-                                        <div class="accordion-analogy">
-                                            <p><strong>Це як у ресторані:</strong></p>
-                                            <ul class="accordion-list">
-                                                <li>ви не стоїте на кухні</li>
-                                                <li>ви не вигадуєте рецепт</li>
-                                                <li>ви обираєте з меню, де вже продумані інгредієнти і наслідки</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="accordion-responsibility-section">
-                                        <h5><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Чия це відповідальність</h5>
-                                        <ul class="accordion-red-list">
-                                            <li>AI не приймає рішення</li>
-                                            <li>AI не несе відповідальність</li>
-                                            <li>AI не керує бізнесом</li>
-                                        </ul>
-                                        <p><strong>AI допомагає:</strong></p>
-                                        <ul class="accordion-list">
-                                            <li>побачити більше варіантів</li>
-                                            <li>зрозуміти наслідки</li>
-                                            <li>не пропустити очевидні ризики</li>
-                                        </ul>
-                                    </div>
-                                    
-                                    <div class="accordion-result"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg> <strong>Рішення завжди приймає власник.</strong></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Module 4 -->
-                        <div class="accordion-item" data-module="4" data-diagnostic-id="guide">
-                            <div class="accordion-header" onclick="toggleAccordion(this)">
-                                <div class="accordion-num">4</div>
-                                <div class="accordion-title">
                                     <h4>Технічний провідник</h4>
                                     <span>Кожен працює як досвідчений — з першого дня і без помилок</span>
+                                    <div class="accordion-preview">
+                                        <div class="preview-block">
+                                            <div class="preview-num">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+                                            </div>
+                                            <div class="preview-content">
+                                                <strong>Штучний інтелект — не іграшка, а робочий інструмент</strong>
+                                                <p style="color: rgba(255,255,255,0.8); font-size: 13px; margin-bottom: 10px;">AI:</p>
+                                                <ul>
+                                                    <li>підказує як виконувати обов'язки</li>
+                                                    <li>допомагає виконувати завдання згідно стандартів галузі</li>
+                                                    <li>замінює "досвід у голові однієї людини" на доступне знання для всієї команди</li>
+                                                </ul>
+                                                <p class="preview-result">Знання перестає бути ризиком.</p>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="accordion-problem-badge" id="accordion-badge-guide"></div>
                                 <div class="accordion-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><polyline points="6 9 12 15 18 9"/></svg></div>
@@ -5463,12 +5237,43 @@
                         </div>
 
                         <!-- Module 5 -->
-                        <div class="accordion-item" data-module="5" data-diagnostic-id="pointb">
+                        <div class="accordion-item" data-module="4" data-diagnostic-id="pointb">
                             <div class="accordion-header" onclick="toggleAccordion(this)">
-                                <div class="accordion-num">5</div>
+                                <div class="accordion-num">4</div>
                                 <div class="accordion-title">
                                     <h4>Точка Б</h4>
                                     <span>Команда рухається в одному напрямку і починає дотримуватись правил без тиску</span>
+                                    <div class="accordion-preview">
+                                        <div class="preview-block">
+                                            <div class="preview-num">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+                                            </div>
+                                            <div class="preview-content">
+                                                <strong>Всі мислять результатом, а не діями</strong>
+                                                <p style="color: rgba(255,255,255,0.8); font-size: 13px; margin-bottom: 10px;">Всі знають:</p>
+                                                <ul>
+                                                    <li>яка мета компанії</li>
+                                                    <li>яку проблему клієнта ми вирішуємо</li>
+                                                    <li>люди мислять не «відповісти на дзвінок», а "щоб клієнт купив послугу"</li>
+                                                    <li>відповідальність — за результат, а не за формальне "я зробив"</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="preview-block">
+                                            <div class="preview-num">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                            </div>
+                                            <div class="preview-content">
+                                                <strong>Що змінюється для власника</strong>
+                                                <ul>
+                                                    <li>вам не потрібно продавлювати правила</li>
+                                                    <li>вам не потрібно контролювати кожен крок</li>
+                                                    <li>ваші накази не викликають внутрішнього спротиву, бо вони логічні, системні, і підкріплені метою та цифрами</li>
+                                                </ul>
+                                                <p class="preview-result">Ви перестаєте бути "поліцією".</p>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="accordion-problem-badge" id="accordion-badge-pointb"></div>
                                 <div class="accordion-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><polyline points="6 9 12 15 18 9"/></svg></div>
@@ -5582,9 +5387,9 @@
                         </div>
 
                         <!-- Module 6 -->
-                        <div class="accordion-item" data-module="6" data-diagnostic-id="product">
+                        <div class="accordion-item" data-module="5" data-diagnostic-id="product">
                             <div class="accordion-header" onclick="toggleAccordion(this)">
-                                <div class="accordion-num">6</div>
+                                <div class="accordion-num">5</div>
                                 <div class="accordion-title">
                                     <h4>Продукт і ЦКП</h4>
                                     <span>Мислення результатом, а не процесом</span>
@@ -5673,12 +5478,45 @@
                         </div>
 
                         <!-- Module 7 -->
-                        <div class="accordion-item" data-module="7" data-diagnostic-id="structure">
+                        <div class="accordion-item" data-module="6" data-diagnostic-id="structure">
                             <div class="accordion-header" onclick="toggleAccordion(this)">
-                                <div class="accordion-num">7</div>
+                                <div class="accordion-num">6</div>
                                 <div class="accordion-title">
                                     <h4>Функціональна структура</h4>
                                     <span>Ніхто не каже "це не моя робота", видно де бізнес тече</span>
+                                    <div class="accordion-preview">
+                                        <div class="preview-block">
+                                            <div class="preview-num">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                                            </div>
+                                            <div class="preview-content">
+                                                <strong>Команда працює як команда</strong>
+                                                <p style="color: rgba(255,255,255,0.8); font-size: 13px; margin-bottom: 10px;">Ніхто не каже: «це не моя робота». Люди:</p>
+                                                <ul>
+                                                    <li>підказують один одному</li>
+                                                    <li>допомагають</li>
+                                                    <li>закривають прогалини в процесах</li>
+                                                </ul>
+                                                <p class="preview-result">Бо відповідальність — за загальний результат, а не за вузьку роль.</p>
+                                            </div>
+                                        </div>
+                                        <div class="preview-block">
+                                            <div class="preview-num">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+                                            </div>
+                                            <div class="preview-content">
+                                                <strong>Чіткі ролі + чіткі бізнес-процеси</strong>
+                                                <p style="color: rgba(255,255,255,0.8); font-size: 13px; margin-bottom: 10px;">Кожен знає:</p>
+                                                <ul>
+                                                    <li>свої посадові обов'язки</li>
+                                                    <li>етапи бізнес-процесів</li>
+                                                    <li>точку відповідальності</li>
+                                                </ul>
+                                                <p style="color: rgba(255,255,255,0.8); font-size: 13px;">Немає «я думав, що це він».</p>
+                                                <p class="preview-result">Функції важливіші за людей.</p>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="accordion-problem-badge" id="accordion-badge-structure"></div>
                                 <div class="accordion-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><polyline points="6 9 12 15 18 9"/></svg></div>
@@ -5759,12 +5597,34 @@
                         </div>
 
                         <!-- Module 8 -->
-                        <div class="accordion-item" data-module="8" data-diagnostic-id="statistics">
+                        <div class="accordion-item" data-module="7" data-diagnostic-id="statistics">
                             <div class="accordion-header" onclick="toggleAccordion(this)">
-                                <div class="accordion-num">8</div>
+                                <div class="accordion-num">7</div>
                                 <div class="accordion-title">
                                     <h4>Система статистик</h4>
                                     <span>Бачите хто реально працює, а хто імітує — без конфлікту</span>
+                                    <div class="accordion-preview">
+                                        <div class="preview-block">
+                                            <div class="preview-num">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+                                            </div>
+                                            <div class="preview-content">
+                                                <strong>Приборна панель замість інтуїції</strong>
+                                                <p style="color: rgba(255,255,255,0.8); font-size: 13px; margin-bottom: 10px;">Ви заходите в систему і бачите:</p>
+                                                <ul>
+                                                    <li>всі процеси — від управлінських до операційних, у цифрах</li>
+                                                    <li>звіти, ефективність кожної людини</li>
+                                                    <li>де збої, де точки росту</li>
+                                                </ul>
+                                                <p style="color: rgba(255,255,255,0.8); font-size: 13px; margin: 10px 0;">AI:</p>
+                                                <ul>
+                                                    <li>передбачає проблеми</li>
+                                                    <li>показує, на що робити акцент, щоб збільшити прибуток</li>
+                                                </ul>
+                                                <p class="preview-result">Управління перестає бути "на відчуттях".</p>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="accordion-problem-badge" id="accordion-badge-statistics"></div>
                                 <div class="accordion-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><polyline points="6 9 12 15 18 9"/></svg></div>
@@ -5790,9 +5650,9 @@
                         </div>
 
                         <!-- Module 9 -->
-                        <div class="accordion-item" data-module="9" data-diagnostic-id="bottlenecks">
+                        <div class="accordion-item" data-module="8" data-diagnostic-id="bottlenecks">
                             <div class="accordion-header" onclick="toggleAccordion(this)">
-                                <div class="accordion-num">9</div>
+                                <div class="accordion-num">8</div>
                                 <div class="accordion-title">
                                     <h4>Аналіз вузьких місць</h4>
                                     <span>Гасите пожежі до того, як загорілось</span>
@@ -5820,12 +5680,38 @@
                         </div>
 
                         <!-- Module 10 -->
-                        <div class="accordion-item" data-module="10" data-diagnostic-id="marketing">
+                        <div class="accordion-item" data-module="9" data-diagnostic-id="marketing">
                             <div class="accordion-header" onclick="toggleAccordion(this)">
-                                <div class="accordion-num">10</div>
+                                <div class="accordion-num">9</div>
                                 <div class="accordion-title">
                                     <h4>Розумна реклама: система маркетингу і продажів</h4>
                                     <span>Як отримувати клієнтів без вмовлянь</span>
+                                    <div class="accordion-preview">
+                                        <div class="preview-block">
+                                            <div class="preview-num">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+                                            </div>
+                                            <div class="preview-content">
+                                                <strong>Продажі та реклама працюють як система</strong>
+                                                <p style="color: rgba(255,255,255,0.8); font-size: 13px; margin-bottom: 8px;">Реклама:</p>
+                                                <ul>
+                                                    <li>стабільно приводить клієнтів</li>
+                                                    <li>приходять цільові, які не торгуються</li>
+                                                </ul>
+                                                <p style="color: rgba(255,255,255,0.8); font-size: 13px; margin: 8px 0;">Продавці:</p>
+                                                <ul>
+                                                    <li>працюють за правилами</li>
+                                                    <li>не імпровізують хаотично</li>
+                                                </ul>
+                                                <p style="color: rgba(255,255,255,0.8); font-size: 13px; margin: 8px 0;">AI:</p>
+                                                <ul>
+                                                    <li>аналізує скрипти</li>
+                                                    <li>підказує продавцям, тренує їх у процесі роботи</li>
+                                                </ul>
+                                                <p class="preview-result">Продажі не залежать від "зірок".</p>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="accordion-problem-badge" id="accordion-badge-marketing"></div>
                                 <div class="accordion-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><polyline points="6 9 12 15 18 9"/></svg></div>
@@ -5941,12 +5827,48 @@
                         </div>
 
                         <!-- Module 11 -->
-                        <div class="accordion-item" data-module="11" data-diagnostic-id="finance">
+                        <div class="accordion-item" data-module="10" data-diagnostic-id="finance">
                             <div class="accordion-header" onclick="toggleAccordion(this)">
-                                <div class="accordion-num">11</div>
+                                <div class="accordion-num">10</div>
                                 <div class="accordion-title">
                                     <h4>Система фінансів</h4>
                                     <span>Гроші перестають "кудись зникати"</span>
+                                    <div class="accordion-preview">
+                                        <div class="preview-block">
+                                            <div class="preview-num">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                                            </div>
+                                            <div class="preview-content">
+                                                <strong>Фінансова система: команда мислить прибутком, а не діями</strong>
+                                                <p style="color: rgba(255,255,255,0.8); font-size: 13px; margin-bottom: 8px;">Кожен співробітник розуміє:</p>
+                                                <ul>
+                                                    <li>як кожна його дія впливає на чистий прибуток</li>
+                                                    <li>де його робота створює цінність для клієнта</li>
+                                                    <li>а де — просто з'їдає ресурси</li>
+                                                </ul>
+                                                <p style="color: rgba(255,255,255,0.8); font-size: 13px; margin: 8px 0;">Люди мислять не «зробити», а:</p>
+                                                <ul>
+                                                    <li>чи це окупається, чи це збільшує маржу</li>
+                                                    <li>чи це варто робити взагалі</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="preview-block">
+                                            <div class="preview-num">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+                                            </div>
+                                            <div class="preview-content">
+                                                <strong>Мислення власника замість "виконавця"</strong>
+                                                <p style="color: rgba(255,255,255,0.8); font-size: 13px; margin-bottom: 8px;">Команда починає мислити з точки зору рентабельності інвестицій (ROI), впливу на чистий прибуток, пріоритетності дій.</p>
+                                                <p style="color: rgba(255,255,255,0.8); font-size: 13px; margin-bottom: 8px;">З'являються питання рівня власника:</p>
+                                                <ul>
+                                                    <li>«Це дасть +5% прибутку чи просто займе час?»</li>
+                                                    <li>«Що вигідніше: прискорити процес чи зменшити витрати?»</li>
+                                                    <li>«Де ми реально втрачаємо гроші?»</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="accordion-problem-badge" id="accordion-badge-finance"></div>
                                 <div class="accordion-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><polyline points="6 9 12 15 18 9"/></svg></div>
@@ -5977,12 +5899,29 @@
                         </div>
 
                         <!-- Module 12 -->
-                        <div class="accordion-item" data-module="12" data-diagnostic-id="hiring">
+                        <div class="accordion-item" data-module="11" data-diagnostic-id="hiring">
                             <div class="accordion-header" onclick="toggleAccordion(this)">
-                                <div class="accordion-num">12</div>
+                                <div class="accordion-num">11</div>
                                 <div class="accordion-title">
                                     <h4>Найм і введення в посаду</h4>
                                     <span>Нова людина працює нормально через 2 тижні, а не 3 місяці</span>
+                                    <div class="accordion-preview">
+                                        <div class="preview-block">
+                                            <div class="preview-num">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
+                                            </div>
+                                            <div class="preview-content">
+                                                <strong>Найм без болю</strong>
+                                                <p style="color: rgba(255,255,255,0.8); font-size: 13px; margin-bottom: 10px;">Є система найму, де:</p>
+                                                <ul>
+                                                    <li>навіть низькокваліфікована людина</li>
+                                                    <li>дає стабільний результат вже з першого тижня</li>
+                                                    <li>і не перепитує кожен крок</li>
+                                                </ul>
+                                                <p class="preview-result">Людей навчає система, а не ви.</p>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="accordion-problem-badge" id="accordion-badge-hiring"></div>
                                 <div class="accordion-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><polyline points="6 9 12 15 18 9"/></svg></div>
@@ -6009,12 +5948,48 @@
                         </div>
 
                         <!-- Module 13 -->
-                        <div class="accordion-item accordion-final" data-module="13" data-diagnostic-id="coach">
+                        <div class="accordion-item accordion-final" data-module="12" data-diagnostic-id="coach">
                             <div class="accordion-header" onclick="toggleAccordion(this)">
-                                <div class="accordion-num">13</div>
+                                <div class="accordion-num">12</div>
                                 <div class="accordion-title">
                                     <h4>Технологія впровадження</h4>
                                     <span>Нарешті доводите справи до кінця — за 65 днів система працює</span>
+                                    <div class="accordion-preview">
+                                        <div class="preview-block">
+                                            <div class="preview-num">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                                            </div>
+                                            <div class="preview-content">
+                                                <strong>Ключова фішка системи — технологія впровадження, а не інструменти</strong>
+                                                <p style="color: rgba(255,255,255,0.8); font-size: 13px; margin: 10px 0;"><strong style="color: #fff;">Чому раніше не виходило.</strong> Більшість власників вже пробували:</p>
+                                                <ul>
+                                                    <li>CRM, інструкції, регламенти</li>
+                                                    <li>таск-менеджери, "розумні" таблиці</li>
+                                                    <li>навчання для персоналу</li>
+                                                </ul>
+                                                <p style="color: rgba(255,255,255,0.8); font-size: 13px; margin: 10px 0;">І результат завжди один: «Інструмент є, а люди ним не користуються».</p>
+                                                <p style="color: var(--accent); font-size: 13px; margin-bottom: 10px;">Це не проблема людей. Це провал технології впровадження.</p>
+                                            </div>
+                                        </div>
+                                        <div class="preview-block">
+                                            <div class="preview-num">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                                            </div>
+                                            <div class="preview-content">
+                                                <strong>У чому різниця</strong>
+                                                <div style="display: flex; gap: 16px; margin-top: 10px; flex-wrap: wrap;">
+                                                    <div style="flex: 1; min-width: 140px; background: rgba(239, 68, 68, 0.15); padding: 10px; border-radius: 8px; border-left: 3px solid #ef4444;">
+                                                        <p style="color: #ef4444; font-size: 12px; font-weight: 700; margin-bottom: 4px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12" style="vertical-align: middle; margin-right: 4px;"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg> Поганий підхід</p>
+                                                        <p style="color: rgba(255,255,255,0.8); font-size: 12px; margin: 0;">"Ось інструмент — користуйтесь"</p>
+                                                    </div>
+                                                    <div style="flex: 1; min-width: 140px; background: rgba(34, 197, 94, 0.15); padding: 10px; border-radius: 8px; border-left: 3px solid var(--primary);">
+                                                        <p style="color: var(--primary); font-size: 12px; font-weight: 700; margin-bottom: 4px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12" style="vertical-align: middle; margin-right: 4px;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Робочий підхід</p>
+                                                        <p style="color: rgba(255,255,255,0.8); font-size: 12px; margin: 0;">"Послідовність кроків, де система вбудовується в роботу"</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="accordion-problem-badge" id="accordion-badge-coach"></div>
                                 <div class="accordion-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><polyline points="6 9 12 15 18 9"/></svg></div>
@@ -6086,13 +6061,195 @@
                             </div>
                         </div>
 
-                        <!-- Final Badge -->
-                        <div class="roadmap-finish">
-                            <div class="finish-badge">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="32" height="32"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                                <span>65 днів — система працює</span>
+                    </div>
+                </div>
+
+                <!-- ЕТАП 2: Стратегічне управління -->
+                <div class="t-section t-section-dark" style="margin-top: 40px;">
+                    <span class="t-badge t-badge-green">Етап 2: Стратегічне управління</span>
+                    
+                    <div class="modules-accordion">
+                        
+                        <!-- Module: Зовнішня експертиза -->
+                        <div class="accordion-item" data-module="13">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <div class="accordion-num">13</div>
+                                <div class="accordion-title">
+                                    <h4>Зовнішня експертиза</h4>
+                                    <span>Ви постійно в курсі новинок і не варитесь у власному соку</span>
+                                    <div class="accordion-preview">
+                                        <div class="preview-block">
+                                            <div class="preview-num">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                                            </div>
+                                            <div class="preview-content">
+                                                <strong>Ви постійно в темі того, що відбувається на ринку</strong>
+                                                <ul>
+                                                    <li>нові управлінські підходи, інструменти, технології</li>
+                                                    <li>зміни в поведінці клієнтів</li>
+                                                    <li>можете обговорити рішення з успішними підприємцями з інших бізнесів</li>
+                                                    <li>отримати тверезу думку зі сторони, а не емоційну підтримку</li>
+                                                </ul>
+                                                <p class="preview-result">Це знімає головну пастку власника — замкнене мислення всередині власної компанії.</p>
+                                            </div>
+                                        </div>
+                                        <div class="preview-block">
+                                            <div class="preview-num">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                                            </div>
+                                            <div class="preview-content">
+                                                <strong>Що це реально дає власнику</strong>
+                                                <ul>
+                                                    <li>ви швидше бачите зміни, ніж вони б'ють по прибутку</li>
+                                                    <li>ви перевіряєте ідеї до впровадження, а не після втрат</li>
+                                                    <li>ви перестаєте гадати: «Я правильно думаю чи ні?»</li>
+                                                </ul>
+                                                <p style="color: rgba(255,255,255,0.8); font-size: 13px; margin: 10px 0;"><strong style="color: #fff;">Ключова різниця:</strong> Це не "нетворкінг". Це система зняття стратегічної сліпоти власника.</p>
+                                                <p class="preview-result">Без цього навіть сильна операційна система через 2–3 роки починає відставати від ринку.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><polyline points="6 9 12 15 18 9"/></svg></div>
                             </div>
                         </div>
+
+                        <!-- Module: Система планування -->
+                        <div class="accordion-item" data-module="14">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <div class="accordion-num">14</div>
+                                <div class="accordion-title">
+                                    <h4>Система планування</h4>
+                                    <span>Плани, які реально виконуються</span>
+                                    <div class="accordion-preview">
+                                        <div class="preview-block">
+                                            <div class="preview-num">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                                            </div>
+                                            <div class="preview-content">
+                                                <strong>Плани перестають бути "побажаннями"</strong>
+                                                <ul>
+                                                    <li>кожен план прив'язаний до цифр і термінів</li>
+                                                    <li>є чіткі пріоритети на тиждень/місяць/квартал</li>
+                                                    <li>система автоматично нагадує про дедлайни</li>
+                                                </ul>
+                                                <p class="preview-result">Плани виконуються, бо вбудовані в щоденну роботу.</p>
+                                            </div>
+                                        </div>
+                                        <div class="preview-block">
+                                            <div class="preview-num">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                                            </div>
+                                            <div class="preview-content">
+                                                <strong>Що змінюється</strong>
+                                                <ul>
+                                                    <li>ви бачите прогрес в реальному часі</li>
+                                                    <li>команда знає свої цілі до початку тижня</li>
+                                                    <li>немає "забув" або "не встиг"</li>
+                                                </ul>
+                                                <p class="preview-result">Планування стає інструментом досягнення, а не формальністю.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><polyline points="6 9 12 15 18 9"/></svg></div>
+                            </div>
+                        </div>
+
+                        <!-- Module: Наради -->
+                        <div class="accordion-item" data-module="15">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <div class="accordion-num">15</div>
+                                <div class="accordion-title">
+                                    <h4>Наради без "розбору польотів"</h4>
+                                    <span>Координація руху вперед, а не звинувачення</span>
+                                    <div class="accordion-preview">
+                                        <div class="preview-block">
+                                            <div class="preview-num">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                                            </div>
+                                            <div class="preview-content">
+                                                <strong>Щотижневі наради</strong>
+                                                <p style="color: rgba(255,255,255,0.8); font-size: 13px; margin-bottom: 10px;">Люди приходять з готовими планами, з цифрами, з пропозиціями.</p>
+                                                <p style="color: rgba(255,255,255,0.8); font-size: 13px; margin-bottom: 10px;"><strong style="color: #fff;">Ви:</strong></p>
+                                                <ul>
+                                                    <li>не сварите, не розбираєте помилки</li>
+                                                    <li>а координуєте рух уперед</li>
+                                                </ul>
+                                                <p style="color: rgba(255,255,255,0.8); font-size: 13px; margin: 10px 0;"><strong style="color: #fff;">Результат:</strong></p>
+                                                <ul>
+                                                    <li>письмово затверджений план, чіткі дії</li>
+                                                    <li>команда бореться за прибуток компанії як за свій</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><polyline points="6 9 12 15 18 9"/></svg></div>
+                            </div>
+                        </div>
+
+                        <!-- Module: Делегування -->
+                        <div class="accordion-item accordion-final" data-module="16">
+                            <div class="accordion-header" onclick="toggleAccordion(this)">
+                                <div class="accordion-num">16</div>
+                                <div class="accordion-title">
+                                    <h4>Делегування в системі</h4>
+                                    <span>Передача відповідальності за результат, а не задач</span>
+                                    <div class="accordion-preview">
+                                        <div class="preview-block">
+                                            <div class="preview-num">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+                                            </div>
+                                            <div class="preview-content">
+                                                <strong>Головна помилка власників</strong>
+                                                <p style="color: rgba(255,255,255,0.8); font-size: 13px; margin: 10px 0;">Більшість вважає, що делегування — це: «Я поставив людині завдання → значить я делегував».</p>
+                                                <p style="color: var(--accent); font-size: 13px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12" style="vertical-align: middle; margin-right: 4px;"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg> Ні. Це розподіл задач, а не делегування.</p>
+                                            </div>
+                                        </div>
+                                        <div class="preview-block">
+                                            <div class="preview-num">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                                            </div>
+                                            <div class="preview-content">
+                                                <strong>Як делегування працює в системі</strong>
+                                                <ul>
+                                                    <li>ви передаєте не завдання, а зону відповідальності</li>
+                                                    <li>відповідальність закріплена цифрами (метрики, план/факт)</li>
+                                                    <li>система змушує мислити як власник</li>
+                                                    <li>AI підтримує делегування, а не підміняє його</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="preview-block">
+                                            <div class="preview-num">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                            </div>
+                                            <div class="preview-content">
+                                                <strong>Що змінюється для власника</strong>
+                                                <ul>
+                                                    <li>більше не тримаєте все в голові</li>
+                                                    <li>не розриваєтесь між дрібними задачами</li>
+                                                    <li>керуєте зонами, результатами, людьми які беруть відповідальність</li>
+                                                </ul>
+                                                <div style="display: flex; gap: 12px; margin-top: 12px; flex-wrap: wrap;">
+                                                    <div style="flex: 1; min-width: 130px; background: rgba(239, 68, 68, 0.15); padding: 8px; border-radius: 8px; border-left: 3px solid #ef4444;">
+                                                        <p style="color: #ef4444; font-size: 11px; font-weight: 700; margin-bottom: 2px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12" style="vertical-align: middle; margin-right: 4px;"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg> Делегування</p>
+                                                        <p style="color: rgba(255,255,255,0.8); font-size: 11px; margin: 0;">"зроби ось це"</p>
+                                                    </div>
+                                                    <div style="flex: 1; min-width: 130px; background: rgba(34, 197, 94, 0.15); padding: 8px; border-radius: 8px; border-left: 3px solid var(--primary);">
+                                                        <p style="color: var(--primary); font-size: 11px; font-weight: 700; margin-bottom: 2px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12" style="vertical-align: middle; margin-right: 4px;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Делегування</p>
+                                                        <p style="color: rgba(255,255,255,0.8); font-size: 11px; margin: 0;">"це твоя зона — зроби щоб цифри росли"</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><polyline points="6 9 12 15 18 9"/></svg></div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
 
@@ -6462,15 +6619,7 @@
               questions: [
                 { id: 4, text: 'Чи буває так, що співробітники приносять вам проблеми замість готових рішень?', trigger: 'Не беруть відповідальність' }
             ]},
-            { id: 'compass', name: 'МОДУЛЬ 3: КОМПАС', 
-              diagnosis: 'Рішення приймаються "на око", без аналізу.',
-              solution: 'КОМПАС — сценарії А/В/С з цифрами та ризиками.',
-              result: 'Передбачуваність у кожному кроці.',
-              hardTruth: 'Ви приймаєте рішення на емоціях і називаєте це "інтуїцією".',
-              questions: [
-                { id: 5, text: 'Чи буває, що вам доводиться приймати управлінські рішення без аналізу цифр — "на око"?', trigger: 'Рішення без аналітики' }
-            ]},
-            { id: 'guide', name: 'МОДУЛЬ 4: Технічний провідник', 
+            { id: 'guide', name: 'МОДУЛЬ 3: Технічний провідник', 
               diagnosis: 'Кожен робить процес "по-своєму".',
               solution: 'AI-система навчає і контролює виконання.',
               result: 'Стабільна операційка.',
@@ -6478,7 +6627,7 @@
               questions: [
                 { id: 6, text: 'Чи буває, що співробітники виконують процес "кожен по-своєму"?', trigger: 'Хаос через відсутність алгоритмів' }
             ]},
-            { id: 'pointb', name: 'МОДУЛЬ 5: Точка Б', 
+            { id: 'pointb', name: 'МОДУЛЬ 4: Точка Б', 
               diagnosis: 'Команда працює по-різному, саботують нововведення.',
               solution: 'Точка Б — стратегічна карта з цілями.',
               result: 'Команда рухається в одному напрямку.',
@@ -6488,7 +6637,7 @@
                 { id: 8, text: 'Чи буває відчуття, що фокус постійно "розїжджається"?', trigger: 'Втрата фокусу' },
                 { id: 9, text: 'Чи саботують співробітники нововведення?', trigger: 'Саботаж змін' }
             ]},
-            { id: 'product', name: 'МОДУЛЬ 6: Продукт і ЦКП', 
+            { id: 'product', name: 'МОДУЛЬ 5: Продукт і ЦКП', 
               diagnosis: 'Клієнт отримує різну якість, торгуються.',
               solution: 'ЦКП — чітке розуміння результату для клієнта.',
               result: 'Якість стабільна, клієнти бачать цінність.',
@@ -6498,7 +6647,7 @@
                 { id: 11, text: 'Чи часто клієнти "торгуються", сумніваються у вартості?', trigger: 'Клієнт не бачить цінність' },
                 { id: 12, text: 'Чи буває, що після нарад команда не виходить з чітким планом?', trigger: 'Наради без результату' }
             ]},
-            { id: 'structure', name: 'МОДУЛЬ 7: Функціональна структура', 
+            { id: 'structure', name: 'МОДУЛЬ 6: Функціональна структура', 
               diagnosis: 'Перекладають відповідальність, ви втручаєтесь у дрібниці.',
               solution: 'Чітка карта "хто за що відповідає".',
               result: 'Команда працює синхронно без вас.',
@@ -6532,7 +6681,7 @@
                 { id: 23, text: 'Чи виникають ситуації, коли проблеми повторюються?', trigger: 'Гасите пожежі' },
                 { id: 24, text: 'Чи є система де можна побачити причину проблеми?', trigger: 'Немає аналітики причин', isNo: true }
             ]},
-            { id: 'marketing', name: 'МОДУЛЬ 10: Маркетинг та продажі', 
+            { id: 'marketing', name: 'МОДУЛЬ 9: Маркетинг та продажі', 
               diagnosis: 'Не знаєте вартість клієнта, заявок недостатньо.',
               solution: 'Прогнозований потік клієнтів, AI-скрипти.',
               result: 'Стабільний потік клієнтів.',
@@ -7008,7 +7157,6 @@
         const modulesConfig = [
             { id: 'orders', name: 'Система розпоряджень', lossPercent: 5, questions: 3 },
             { id: 'radar', name: 'РАДАР', lossPercent: 15, questions: 1 },
-            { id: 'compass', name: 'КОМПАС', lossPercent: 10, questions: 1 },
             { id: 'guide', name: 'Технічний провідник', lossPercent: 10, questions: 1 },
             { id: 'pointb', name: 'Точка Б', lossPercent: 15, questions: 3 },
             { id: 'product', name: 'Продукт і ЦКП', lossPercent: 10, questions: 3 },
@@ -7199,50 +7347,6 @@
                             </div>
                         </div>
                         ` : ''}
-                        ${m.id === 'compass' ? `
-                        <div class="diagnostic-mistakes-block">
-                            <div class="diagnostic-mistakes-header" onclick="toggleMistakesBlock(this)">
-                                <h4><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> Що тут ЗАЗВИЧАЙ роблять невірно (хоч здається очевидним)</h4>
-                                <span class="diagnostic-mistakes-arrow">▼</span>
-                            </div>
-                            <div class="diagnostic-mistakes-content">
-                            <div class="mistake-item">
-                                <div class="mistake-header"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg> Помилка №1. Романтизують рішення "на око"</div>
-                                <p><strong>Типова внутрішня логіка власника:</strong></p>
-                                <p><em>"Я ж підприємець, я відчуваю бізнес, інтуїція мене не підводила"</em></p>
-                                <p>І відповідь "Так" читається як: <em>"Я сильний, я досвідчений"</em></p>
-                                <p class="mistake-conclusion"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> Але для системного бізнесу це червоний прапор, не суперсила.</p>
-                            </div>
-                            
-                            <div class="mistake-item">
-                                <div class="mistake-header"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg> Помилка №2. Плутають досвід із прогнозованістю</div>
-                                <p><strong>Власник думає:</strong></p>
-                                <p><em>"Я і раніше так вирішував — і нормально"</em></p>
-                                <p>Але:</p>
-                                <ul>
-                                    <li>один вдалий досвід ≠ стабільний результат</li>
-                                    <li>інтуїція не масштабується</li>
-                                    <li>інтуїція не передається команді</li>
-                                </ul>
-                                <p class="mistake-note"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg> Бізнес, що тримається на "чуйці", завжди тримається на одній голові.</p>
-                            </div>
-                            
-                            <div class="mistake-item">
-                                <div class="mistake-header"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg> Помилка №3. Вважають, що "немає цифр"</div>
-                                <p><strong>Насправді цифри є завжди:</strong></p>
-                                <ul>
-                                    <li>продажі</li>
-                                    <li>витрати</li>
-                                    <li>повторні клієнти</li>
-                                    <li>простої</li>
-                                    <li>брак</li>
-                                    <li>затримки</li>
-                                </ul>
-                                <p class="mistake-note"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg> Проблема не в тому, що їх немає. Проблема в тому, що вони не зібрані в одну картину.</p>
-                            </div>
-                            </div>
-                        </div>
-                        ` : ''}
                         ${m.id === 'pointb' ? `
                         <div class="diagnostic-mistakes-block">
                             <div class="diagnostic-mistakes-header" onclick="toggleMistakesBlock(this)">
@@ -7291,7 +7395,7 @@
                                     <li>пріоритетів</li>
                                     <li>відповіді "що головне, а що другорядне"</li>
                                 </ul>
-                                <p>👉 фокус не може не роз'їжджатися.</p>
+                                <p><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14" style="vertical-align: middle; margin-right: 4px;"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg> фокус не може не роз'їжджатися.</p>
                                 <p class="mistake-note"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg> Фокус — це не сила волі. Фокус — це наслідок ясної цілі.</p>
                             </div>
                             
@@ -7427,7 +7531,7 @@
             // Можна показати десь загальну суму
         }
         function updateAccordionBadges() {
-            const moduleIds = ['orders', 'radar', 'compass', 'guide', 'pointb', 'product', 'structure', 'statistics', 'bottlenecks', 'marketing', 'finance', 'hiring', 'coach'];
+            const moduleIds = ['orders', 'radar', 'guide', 'pointb', 'product', 'structure', 'statistics', 'bottlenecks', 'marketing', 'finance', 'hiring', 'coach'];
             moduleIds.forEach(modId => {
                 const badge = document.getElementById('accordion-badge-' + modId);
                 if (!badge) return;
@@ -7458,7 +7562,7 @@
                 const problems = Object.values(diagnosticAnswers).filter(a => a.moduleId === m.id && a.isProblem).length;
                 moduleProblems[m.id] = problems;
             });
-            const systemIds = ['orders', 'radar', 'compass', 'guide', 'pointb', 'product', 'structure', 'statistics', 'bottlenecks', 'marketing', 'finance', 'hiring', 'coach'];
+            const systemIds = ['orders', 'radar', 'guide', 'pointb', 'product', 'structure', 'statistics', 'bottlenecks', 'marketing', 'finance', 'hiring', 'coach'];
             systemIds.forEach(moduleId => {
                 const problems = moduleProblems[moduleId] || 0;
                 const item = document.getElementById('system-' + moduleId);
