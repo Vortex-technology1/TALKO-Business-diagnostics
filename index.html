@@ -1259,6 +1259,291 @@
             padding-top: 10px;
             border-top: 1px solid rgba(255,255,255,0.1);
         }
+        /* 5 Layers Accordion Styles */
+        .layers-accordion {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 24px;
+        }
+        .layer-item {
+            background: #fff;
+            border: 2px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .layer-item:hover {
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+        }
+        .layer-item.active {
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+        }
+        .layer-item.layer-1 { border-color: var(--blue); }
+        .layer-item.layer-1 .layer-header { background: linear-gradient(135deg, var(--blue-light) 0%, #dbeafe 100%); }
+        .layer-item.layer-1 .layer-num { background: var(--blue); }
+        .layer-item.layer-1 .layer-title { color: var(--blue); }
+        .layer-item.layer-2 { border-color: var(--primary); }
+        .layer-item.layer-2 .layer-header { background: linear-gradient(135deg, var(--primary-light) 0%, #bbf7d0 100%); }
+        .layer-item.layer-2 .layer-num { background: var(--primary); }
+        .layer-item.layer-2 .layer-title { color: var(--primary-dark); }
+        .layer-item.layer-3 { border-color: var(--orange); }
+        .layer-item.layer-3 .layer-header { background: linear-gradient(135deg, var(--orange-light) 0%, #fed7aa 100%); }
+        .layer-item.layer-3 .layer-num { background: var(--orange); }
+        .layer-item.layer-3 .layer-title { color: #c2410c; }
+        .layer-item.layer-4 { border-color: var(--purple); }
+        .layer-item.layer-4 .layer-header { background: linear-gradient(135deg, var(--purple-light) 0%, #e9d5ff 100%); }
+        .layer-item.layer-4 .layer-num { background: var(--purple); }
+        .layer-item.layer-4 .layer-title { color: #7c3aed; }
+        .layer-item.layer-5 { border-color: var(--red); }
+        .layer-item.layer-5 .layer-header { background: linear-gradient(135deg, var(--red-light) 0%, #fecaca 100%); }
+        .layer-item.layer-5 .layer-num { background: var(--red); }
+        .layer-item.layer-5 .layer-title { color: #dc2626; }
+        .layer-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 20px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .layer-num {
+            width: 56px;
+            height: 56px;
+            min-width: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-weight: 800;
+            font-size: 1.4rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .layer-icon {
+            width: 28px;
+            height: 28px;
+            color: inherit;
+        }
+        .layer-info {
+            flex: 1;
+        }
+        .layer-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+            margin: 0 0 4px 0;
+        }
+        .layer-subtitle {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+            margin: 0;
+        }
+        .layer-arrow {
+            color: var(--text-gray);
+            transition: transform 0.3s;
+        }
+        .layer-item.active .layer-arrow {
+            transform: rotate(180deg);
+        }
+        .layer-body {
+            display: none;
+            padding: 0 20px 20px;
+            border-top: 1px solid var(--border);
+            background: #fff;
+        }
+        .layer-item.active .layer-body {
+            display: block;
+        }
+        .layer-content {
+            padding-top: 20px;
+        }
+        .layer-text {
+            color: var(--text-dark);
+            line-height: 1.7;
+            font-size: 0.95rem;
+            margin-bottom: 16px;
+        }
+        .layer-box {
+            background: var(--bg-light);
+            border-radius: var(--radius-sm);
+            padding: 16px;
+            margin-bottom: 16px;
+        }
+        .layer-box-title {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+        }
+        .layer-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            gap: 8px;
+        }
+        .layer-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        .layer-list li svg {
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .layer-tip {
+            padding: 14px 18px;
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 16px;
+        }
+        .layer-tip.blue { background: var(--blue); color: #fff; }
+        .layer-tip.green { background: var(--primary-dark); color: #fff; }
+        .layer-tip.orange { background: var(--orange); color: #fff; }
+        .layer-tip.purple { background: var(--purple); color: #fff; }
+        .layer-tip.red { background: var(--red); color: #fff; }
+        .layer-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            margin-top: 12px;
+        }
+        .layer-table th {
+            padding: 10px 12px;
+            text-align: left;
+            font-weight: 700;
+            border-bottom: 2px solid var(--border);
+        }
+        .layer-table td {
+            padding: 10px 12px;
+            border-bottom: 1px solid var(--border);
+        }
+        .layer-table tr:last-child td {
+            border-bottom: none;
+        }
+        .tool-item {
+            border-left: 3px solid var(--primary);
+            padding-left: 12px;
+            margin-bottom: 12px;
+        }
+        .tool-item strong {
+            display: block;
+            margin-bottom: 4px;
+        }
+        .tool-item p {
+            font-size: 0.85rem;
+            color: var(--text-gray);
+            margin: 0;
+        }
+        .example-box {
+            border-radius: var(--radius-sm);
+            padding: 14px;
+            margin-bottom: 12px;
+        }
+        .example-box.bad {
+            background: var(--red-light);
+            border-left: 3px solid var(--red);
+        }
+        .example-box.good {
+            background: var(--bg-green);
+            border-left: 3px solid var(--primary);
+        }
+        .example-box strong {
+            display: block;
+            margin-bottom: 4px;
+        }
+        .example-box p {
+            font-size: 0.85rem;
+            color: var(--text-gray);
+            margin: 0;
+        }
+        .mindset-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 24px;
+        }
+        @media (max-width: 600px) {
+            .mindset-grid { grid-template-columns: 1fr; }
+            .layer-num { width: 44px; height: 44px; min-width: 44px; font-size: 1.1rem; }
+            .layer-title { font-size: 1rem; }
+            .layer-header { padding: 14px; gap: 12px; }
+        }
+        .mindset-col {
+            border-radius: var(--radius-sm);
+            padding: 16px;
+        }
+        .mindset-col.bad { background: var(--red-light); }
+        .mindset-col.good { background: var(--bg-green); }
+        .mindset-col h4 {
+            text-align: center;
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+        }
+        .mindset-col.bad h4 { color: var(--red); }
+        .mindset-col.good h4 { color: var(--primary-dark); }
+        .mindset-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .mindset-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+            font-size: 0.9rem;
+        }
+        .mindset-list li:last-child { border-bottom: none; }
+        .action-block {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border-radius: var(--radius);
+            padding: 24px;
+            margin-top: 24px;
+            color: #fff;
+        }
+        .action-block h3 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .action-item {
+            background: rgba(255,255,255,0.15);
+            border-radius: var(--radius-sm);
+            padding: 16px;
+            margin-bottom: 12px;
+        }
+        .action-item:last-child { margin-bottom: 0; }
+        .action-item h4 {
+            margin: 0 0 8px 0;
+            font-size: 1rem;
+        }
+        .action-item p {
+            margin: 0;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        .final-rule {
+            background: linear-gradient(135deg, #1a1a1a 0%, #374151 100%);
+            border-radius: var(--radius);
+            padding: 24px;
+            margin-top: 24px;
+            color: #fff;
+            text-align: center;
+        }
+        .final-rule h3 { margin-bottom: 16px; }
+        .final-rule .highlight {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 12px 0;
+        }
         .anamnez-accordion {
             display: flex;
             flex-direction: column;
@@ -5510,14 +5795,15 @@
         <div class="main-nav">
             <div class="nav-tab active" onclick="navigateToSection(1)">1. Знайомство</div>
             <div class="nav-tab" onclick="navigateToSection(2)">2. Анамнез</div>
-            <div class="nav-tab" onclick="navigateToSection(3)">3. Клініка</div>
-            <div class="nav-tab" onclick="navigateToSection(4)">4. Виробництво</div>
-            <div class="nav-tab" onclick="navigateToSection(5)">5. Харчове</div>
-            <div class="nav-tab" onclick="navigateToSection(6)">6. Діагностика</div>
-            <div class="nav-tab" onclick="navigateToSection(7)">7. Калькулятор</div>
-            <div class="nav-tab" onclick="navigateToSection(8)">8. Система</div>
-            <div class="nav-tab" onclick="navigateToSection(9)">9. Карта</div>
-            <div class="nav-tab" onclick="navigateToSection(10)">10. Тарифи</div>
+            <div class="nav-tab" onclick="navigateToSection(3)">3. 5 шарів</div>
+            <div class="nav-tab" onclick="navigateToSection(4)">4. Клініка</div>
+            <div class="nav-tab" onclick="navigateToSection(5)">5. Виробництво</div>
+            <div class="nav-tab" onclick="navigateToSection(6)">6. Харчове</div>
+            <div class="nav-tab" onclick="navigateToSection(7)">7. Діагностика</div>
+            <div class="nav-tab" onclick="navigateToSection(8)">8. Калькулятор</div>
+            <div class="nav-tab" onclick="navigateToSection(9)">9. Система</div>
+            <div class="nav-tab" onclick="navigateToSection(10)">10. Карта</div>
+            <div class="nav-tab" onclick="navigateToSection(11)">11. Тарифи</div>
         </div>
         <!-- PROGRESS BAR -->
         <div class="progress-bar">
@@ -6071,16 +6357,696 @@
                     Назад
                 </button>
                 <button class="nav-btn primary" onclick="navigateToSection(3)">
+                    Далі: 5 шарів
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+                </button>
+            </div>
+        </div>
+        
+        <!-- SECTION 3: 5 LAYERS -->
+        <div class="section hidden" id="section3">
+            <div class="section-header">
+                <h2><span class="section-number">3</span> 5 шарів бізнесу</h2>
+            </div>
+            
+            <!-- Intro -->
+            <div class="anamnez-intro">
+                <div class="anamnez-intro-header">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="8" stroke-dasharray="2 2"/><circle cx="12" cy="12" r="11"/></svg>
+                    <h3>Чому одні бізнеси злітають, а інші буксують на місці?</h3>
+                </div>
+                <p style="color: var(--text-gray); margin-top: 12px; font-size: 1.05rem; line-height: 1.7;">
+                    Уявіть бізнес як торт з 5 шарами. Коли щось не працює — треба зрозуміти, на якому шарі проблема. Бо якщо лікуєте не те — нічого не зміниться.
+                </p>
+            </div>
+            
+            <!-- 5 Layers Accordion -->
+            <div class="layers-accordion">
+                
+                <!-- ========== LAYER 1: ЩО ВИ РОБИТЕ ========== -->
+                <div class="layer-item layer-1">
+                    <div class="layer-header" onclick="toggleLayerItem(this)">
+                        <div class="layer-num">1</div>
+                        <div class="layer-info">
+                            <h4 class="layer-title">ЩО ВИ РОБИТЕ</h4>
+                            <p class="layer-subtitle">Рівень дій</p>
+                        </div>
+                        <div class="layer-arrow">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                        </div>
+                    </div>
+                    <div class="layer-body">
+                        <div class="layer-content">
+                            
+                            <!-- Що це таке -->
+                            <div class="layer-box">
+                                <div class="layer-box-title" style="color: var(--blue);">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
+                                    Що це таке?
+                                </div>
+                                <p class="layer-text" style="margin-bottom: 12px;">
+                                    Це найпростіший шар — Ваші щоденні дії і навички. Те, що Ви робите руками і головою кожен день.
+                                </p>
+                                <p class="layer-text" style="margin-bottom: 12px;">
+                                    Дзвоните клієнтам. Проводите зустрічі. Рахуєте гроші. Контролюєте виробництво. Вирішуєте конфлікти. Відправляєте рахунки. Перевіряєте якість.
+                                </p>
+                                <p class="layer-text" style="margin-bottom: 0;">
+                                    Сюди ж входять Ваші навички: вмієте продавати, вмієте вести переговори, вмієте рахувати фінанси, вмієте наймати людей. Чим більше навичок — тим більше можете зробити самі.
+                                </p>
+                            </div>
+                            
+                            <!-- В чому проблема -->
+                            <div class="layer-box">
+                                <div class="layer-box-title" style="color: var(--red);">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                                    В чому проблема?
+                                </div>
+                                <p class="layer-text" style="margin-bottom: 12px;">
+                                    <strong>В добі 24 години.</strong> Ви фізично не можете робити більше. Навіть якщо Ви геній і працюєте по 16 годин — є стеля.
+                                </p>
+                                <p class="layer-text" style="margin-bottom: 12px;">
+                                    Максимум 10 зустрічей на день. Максимум 30 дзвінків. Максимум 5 об'єктів під контролем. І все — Ви впираєтесь у власні обмеження.
+                                </p>
+                                <p class="layer-text" style="margin-bottom: 0;">
+                                    Багато власників думають: «Мені просто треба більше працювати» або «Мені треба навчитись новому». Але це не завжди так. Іноді проблема не в тому, ЩО Ви робите, а в тому, ЯК організована робота.
+                                </p>
+                            </div>
+                            
+                            <div class="layer-box">
+                                <div class="layer-box-title" style="color: var(--blue);">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                                    Коли пора копати глибше:
+                                </div>
+                                <ul class="layer-list">
+                                    <li>
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+                                        «В мене немає часу»
+                                    </li>
+                                    <li>
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+                                        Люди саботують зміни, ігнорують інструкції, низька задіяність команди
+                                    </li>
+                                    <li>
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+                                        Управління «по відчуттях» — проблеми виявляються, коли вже пізно
+                                    </li>
+                                    <li>
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+                                        Відсутність чіткого росту, розвитку або нерозуміння куди рухатись
+                                    </li>
+                                    <li>
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+                                        Труднощі з ухваленням рішень
+                                    </li>
+                                    <li>
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+                                        Немає кому працювати
+                                    </li>
+                                    <li>
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+                                        Нестабільні продажі та залучення клієнтів
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="layer-tip blue">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+                                Якщо це про Вас — проблема не в тому, що Ви мало робите або мало вмієте. Проблема в тому, що немає системи. Треба спускатися на наступний шар.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- ========== LAYER 2: ЯК ВИ ЦЕ РОБИТЕ ========== -->
+                <div class="layer-item layer-2">
+                    <div class="layer-header" onclick="toggleLayerItem(this)">
+                        <div class="layer-num">2</div>
+                        <div class="layer-info">
+                            <h4 class="layer-title">ЯК ВИ ЦЕ РОБИТЕ</h4>
+                            <p class="layer-subtitle">Рівень інструментів</p>
+                        </div>
+                        <div class="layer-arrow">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                        </div>
+                    </div>
+                    <div class="layer-body">
+                        <div class="layer-content">
+                            
+                            <!-- Що таке інструменти -->
+                            <div class="layer-box">
+                                <div class="layer-box-title" style="color: var(--primary-dark);">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
+                                    Що таке інструменти простими словами?
+                                </div>
+                                <p class="layer-text" style="margin-bottom: 0;">
+                                    Інструменти — це «правила гри» у Вашому бізнесі. Це системи, які дозволяють бізнесу працювати без того, щоб Ви тримали все в голові.
+                                </p>
+                            </div>
+                            
+                            <!-- Які інструменти вирішують які проблеми -->
+                            <div class="layer-box">
+                                <div class="layer-box-title" style="color: var(--primary-dark);">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                                    Які інструменти вирішують які проблеми:
+                                </div>
+                                
+                                <div class="tool-item">
+                                    <strong>«В мене немає часу» → Функціональна структура + Делегування</strong>
+                                    <p>Функціональна структура — це коли кожна людина знає свою зону відповідальності. Не «всі роблять все», а чітко: ця людина відповідає за продажі, ця — за виробництво, ця — за фінанси. Коли є структура — Ви делегуєте не «завдання», а цілі функції. І звільняєте свій час.</p>
+                                </div>
+                                
+                                <div class="tool-item">
+                                    <strong>«Люди саботують, ігнорують інструкції» → Чіткі інструкції + Координація</strong>
+                                    <p>Якщо люди не роблять те, що треба — або вони не розуміють ЩО робити, або немає контролю. Інструкції — це покрокові описи: що робити, як робити, який результат має бути. Координація — це регулярні наради, де Ви синхронізуєте команду і перевіряєте виконання.</p>
+                                </div>
+                                
+                                <div class="tool-item">
+                                    <strong>«Управління по відчуттях, проблеми пізно» → Система метрик + Аналіз вузького місця</strong>
+                                    <p>Метрики — це цифри, які показують стан бізнесу. Скільки заявок, скільки продажів, яка конверсія, скільки грошей. Дивитесь на таблицю — бачите, де проблема. Аналіз вузького місця — це коли знаходите ту ланку, яка гальмує весь бізнес. Може бути, що продажі є, але виробництво не встигає. Або заявки є, але менеджери не закривають.</p>
+                                </div>
+                                
+                                <div class="tool-item">
+                                    <strong>«Нерозуміння куди рухатись» → Планування</strong>
+                                    <p>План — це не «хочу заробити мільйон». Це конкретно: щоб заробити X, потрібно Y клієнтів, для цього потрібно Z заявок, для цього потрібно запустити таку-то рекламу. План розкладає велику ціль на конкретні кроки.</p>
+                                </div>
+                                
+                                <div class="tool-item">
+                                    <strong>«Нестабільні продажі, немає клієнтів» → Система маркетингу і продажів</strong>
+                                    <p>Система — це коли клієнти приходять не випадково, а тому що Ви запустили процес. Реклама → заявки → дзвінок → зустріч → продаж. Кожен етап вимірюється. Кожен етап можна покращити.</p>
+                                </div>
+                                
+                                <div class="tool-item">
+                                    <strong>«Немає кому працювати» → Найм і введення в посаду</strong>
+                                    <p>Це система пошуку людей: де шукати, як відбирати, як проводити співбесіду. І система адаптації: як ввести нову людину, щоб вона швидко почала давати результат, а не «розбиралась» місяцями.</p>
+                                </div>
+                                
+                                <div class="tool-item">
+                                    <strong>«Труднощі з рішеннями про гроші» → Фінанси</strong>
+                                    <p>Це облік: скільки прийшло, скільки пішло, скільки залишилось. Це бюджет: скільки можете витратити на рекламу, на зарплати, на розвиток. Без цифр — рішення навмання.</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Таблиця -->
+                            <div class="layer-box" style="overflow-x: auto;">
+                                <div class="layer-box-title" style="color: var(--primary-dark);">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+                                    Таблиця: проблема → інструмент
+                                </div>
+                                <table class="layer-table">
+                                    <thead style="background: var(--bg-green);">
+                                        <tr>
+                                            <th style="border-bottom-color: var(--primary);">Ваша проблема</th>
+                                            <th style="border-bottom-color: var(--primary);">Який інструмент потрібен</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><td>Немає часу, все на мені</td><td>Функціональна структура, делегування</td></tr>
+                                        <tr><td>Люди не роблять, саботують</td><td>Чіткі інструкції, система координації</td></tr>
+                                        <tr><td>Не бачу проблем вчасно</td><td>Система метрик (дашборд)</td></tr>
+                                        <tr><td>Не розумію, що гальмує бізнес</td><td>Аналіз вузького місця</td></tr>
+                                        <tr><td>Не знаю куди рухатись</td><td>Планування (тиждень/місяць/квартал)</td></tr>
+                                        <tr><td>Клієнти то є, то нема</td><td>Система маркетингу і продажів</td></tr>
+                                        <tr><td>Не можу знайти людей</td><td>Система найму і введення в посаду</td></tr>
+                                        <tr><td>Гроші кудись діваються</td><td>Фінансовий облік і бюджетування</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                            <!-- Коли пора копати глибше -->
+                            <div class="layer-box">
+                                <div class="layer-box-title" style="color: var(--red);">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                                    Коли пора копати глибше:
+                                </div>
+                                <ul class="layer-list">
+                                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg> Низька рентабельність (працюєте багато — заробляєте мало)</li>
+                                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg> Доходи падають</li>
+                                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg> Витрати з'їдають прибуток</li>
+                                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg> Залежність від 2-3 клієнтів або ключового співробітника — втратите одного і все</li>
+                                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg> Бізнес росте менше 20% на рік</li>
+                                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg> Не можете платити нормальні зарплати</li>
+                                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg> Маркетинг і продажі не окупаються</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="layer-tip green">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+                                Якщо інструменти є, а грошей все одно мало — проблема не в управлінні. Проблема в самій ідеї того, як Ви заробляєте.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- ========== LAYER 3: НА ЧОМУ ВИ ЗАРОБЛЯЄТЕ ========== -->
+                <div class="layer-item layer-3">
+                    <div class="layer-header" onclick="toggleLayerItem(this)">
+                        <div class="layer-num">3</div>
+                        <div class="layer-info">
+                            <h4 class="layer-title">НА ЧОМУ ВИ ЗАРОБЛЯЄТЕ</h4>
+                            <p class="layer-subtitle">Рівень бізнес-моделі</p>
+                        </div>
+                        <div class="layer-arrow">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                        </div>
+                    </div>
+                    <div class="layer-body">
+                        <div class="layer-content">
+                            
+                            <!-- Що таке бізнес-модель -->
+                            <div class="layer-box">
+                                <div class="layer-box-title" style="color: #c2410c;">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
+                                    Що таке бізнес-модель простими словами?
+                                </div>
+                                <p class="layer-text" style="margin-bottom: 0;">
+                                    Бізнес-модель — це відповідь на питання: <strong>«Як саме Ви робите гроші?»</strong>
+                                </p>
+                                <p class="layer-text" style="margin-bottom: 0;">
+                                    Не ЩО Ви продаєте, а ЯК Ви на цьому заробляєте.
+                                </p>
+                            </div>
+                            
+                            <!-- Приклад з меблів -->
+                            <div class="layer-box">
+                                <div class="layer-box-title" style="color: #c2410c;">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg>
+                                    Приклад з меблів:
+                                </div>
+                                <p class="layer-text">Дві компанії роблять кухні на замовлення. Але заробляють по-різному:</p>
+                                
+                                <div class="example-box bad">
+                                    <strong>Компанія №1 (модель «дешевше за всіх»):</strong>
+                                    <ul style="margin: 8px 0 0 0; padding-left: 20px; font-size: 0.9rem; color: var(--text-gray);">
+                                        <li>Кухня від 15 000 грн</li>
+                                        <li>Треба зробити 20 кухонь на місяць</li>
+                                        <li>Маленька націнка, великий об'єм</li>
+                                        <li>Конкурує ціною — хто дешевше</li>
+                                        <li>Економить на матеріалах і монтажі</li>
+                                        <li>Клієнти торгуються за кожну гривню</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="example-box good">
+                                    <strong>Компанія №2 (модель «під ключ з сервісом»):</strong>
+                                    <ul style="margin: 8px 0 0 0; padding-left: 20px; font-size: 0.9rem; color: var(--text-gray);">
+                                        <li>Кухня від 80 000 грн</li>
+                                        <li>Треба зробити 5 кухонь на місяць</li>
+                                        <li>Велика націнка, менший об'єм</li>
+                                        <li>Дизайн-проект, преміум матеріали, гарантія 5 років</li>
+                                        <li>Клієнти платять за спокій і результат</li>
+                                    </ul>
+                                </div>
+                                
+                                <p style="font-size: 0.95rem; color: var(--text-dark); font-style: italic; margin-top: 12px;">Обидві роблять кухні. Але це <strong>різні бізнеси</strong> з різними правилами.</p>
+                            </div>
+                            
+                            <!-- Приклад з клініки -->
+                            <div class="layer-box">
+                                <div class="layer-box-title" style="color: #c2410c;">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                                    Приклад з клініки:
+                                </div>
+                                <p class="layer-text">Дві стоматології в одному місті. Але заробляють по-різному:</p>
+                                
+                                <div class="example-box bad">
+                                    <strong>Клініка №1 (модель «потік»):</strong>
+                                    <ul style="margin: 8px 0 0 0; padding-left: 20px; font-size: 0.9rem; color: var(--text-gray);">
+                                        <li>Прийом 300 грн</li>
+                                        <li>Треба прийняти 40 пацієнтів на день</li>
+                                        <li>Лікар працює на швидкість</li>
+                                        <li>Черги, запис за 2 тижні</li>
+                                        <li>Плинність кадрів — лікарі вигорають</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="example-box good">
+                                    <strong>Клініка №2 (модель «комплексне лікування»):</strong>
+                                    <ul style="margin: 8px 0 0 0; padding-left: 20px; font-size: 0.9rem; color: var(--text-gray);">
+                                        <li>Середній чек 25 000 грн</li>
+                                        <li>5-7 пацієнтів на день</li>
+                                        <li>Повна санація, імплантація, протезування</li>
+                                        <li>Лікар веде пацієнта місяцями</li>
+                                        <li>Пацієнти приходять по рекомендаціях</li>
+                                    </ul>
+                                </div>
+                                
+                                <p style="font-size: 0.95rem; color: var(--text-dark); font-style: italic; margin-top: 12px;">Обидві лікують зуби. Але перша заробляє на потоці, друга — на цінності і довірі.</p>
+                            </div>
+                            
+                            <!-- Як зрозуміти, чи модель працює -->
+                            <div class="layer-box">
+                                <div class="layer-box-title" style="color: #c2410c;">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
+                                    Як зрозуміти, чи Ваша модель працює:
+                                </div>
+                                
+                                <div style="margin-bottom: 16px;">
+                                    <p style="font-weight: 700; margin-bottom: 4px;">Питання 1: Люди взагалі хочуть те, що Ви продаєте?</p>
+                                    <p style="font-size: 0.9rem; color: var(--text-gray); margin: 0;">Якщо доводиться «впарювати» і переконувати — можливо, продукт не потрібен ринку. Або потрібен, але не в такому вигляді.</p>
+                                </div>
+                                
+                                <div style="margin-bottom: 16px;">
+                                    <p style="font-weight: 700; margin-bottom: 4px;">Питання 2: Скільки залишається після всіх витрат?</p>
+                                    <p style="font-size: 0.9rem; color: var(--text-gray); margin: 0;">Оборот 100 000, а прибутку 5 000? Це 5%. Занадто мало. З такою маржею Ви ніколи не наймете людей і не виростите бізнес.</p>
+                                    <p style="font-size: 0.9rem; color: var(--primary-dark); font-weight: 600; margin: 8px 0 0 0;">Норма для малого бізнесу — 15-30% чистого прибутку.</p>
+                                </div>
+                                
+                                <div style="margin-bottom: 16px;">
+                                    <p style="font-weight: 700; margin-bottom: 4px;">Питання 3: Чи можете Ви рости?</p>
+                                    <p style="font-size: 0.9rem; color: var(--text-gray); margin: 0;">Якщо, щоб заробити вдвічі більше, Вам треба працювати вдвічі більше — це не бізнес, це самозайнятість. Бізнес-модель має дозволяти рости без того, щоб Ви померли на роботі.</p>
+                                </div>
+                                
+                                <div>
+                                    <p style="font-weight: 700; margin-bottom: 4px;">Питання 4: Чи можете Ви платити нормальні зарплати?</p>
+                                    <p style="font-size: 0.9rem; color: var(--text-gray); margin: 0;">Якщо не можете найняти адміна чи продавця, бо «не вистачає» — націнка занизька. Або продаєте не тим людям. Або продаєте не те.</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Ознаки поганої моделі -->
+                            <div class="layer-box">
+                                <div class="layer-box-title" style="color: var(--red);">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                                    Ознаки поганої бізнес-моделі:
+                                </div>
+                                <ul class="layer-list">
+                                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg> Працюєте багато — заробляєте мало</li>
+                                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg> Клієнти торгуються за кожну копійку</li>
+                                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg> Конкуруєте тільки ціною (хто дешевше)</li>
+                                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg> Не можете підняти ціни — «клієнти підуть»</li>
+                                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg> Сезонність: то густо, то пусто</li>
+                                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg> Залежите від 1-2 великих клієнтів</li>
+                                </ul>
+                            </div>
+                            
+                            <!-- Що робити -->
+                            <div class="layer-box">
+                                <div class="layer-box-title" style="color: #c2410c;">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                                    Що робити, якщо модель не працює:
+                                </div>
+                                <ol style="margin: 0; padding-left: 20px;">
+                                    <li style="margin-bottom: 8px;"><strong>Змінити аудиторію</strong> — продавати тим, хто готовий платити більше</li>
+                                    <li style="margin-bottom: 8px;"><strong>Змінити продукт</strong> — додати цінності, щоб можна було підняти ціну</li>
+                                    <li style="margin-bottom: 8px;"><strong>Змінити спосіб продажу</strong> — підписка замість разової покупки, пакети замість поштучно</li>
+                                    <li><strong>Змінити нішу</strong> — іноді простіше почати інший бізнес</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- ========== LAYER 4: НАВІЩО ВИ ЦЕ РОБИТЕ ========== -->
+                <div class="layer-item layer-4">
+                    <div class="layer-header" onclick="toggleLayerItem(this)">
+                        <div class="layer-num">4</div>
+                        <div class="layer-info">
+                            <h4 class="layer-title">НАВІЩО ВИ ЦЕ РОБИТЕ</h4>
+                            <p class="layer-subtitle">Рівень цілей та партнерів</p>
+                        </div>
+                        <div class="layer-arrow">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                        </div>
+                    </div>
+                    <div class="layer-body">
+                        <div class="layer-content">
+                            <p class="layer-text">
+                                Коли думаєте про свої цілі — Ви заряджаєтесь чи Вам нудно? Якщо від своїх цілей не горять очі — щось не те.
+                            </p>
+                            <p class="layer-text">
+                                А якщо у Вас є партнер і ви хочете різного — кожен тягне в свій бік, енергія витікає.
+                            </p>
+                            
+                            <div class="layer-box">
+                                <div class="layer-box-title" style="color: var(--red);">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                                    Коли пора копати глибше:
+                                </div>
+                                <ul class="layer-list">
+                                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg> Команда без ентузіазму</li>
+                                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg> Люди не проявляють ініціативу</li>
+                                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg> Працівники постійно звільняються</li>
+                                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg> Вам самому нудно</li>
+                                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg> Нових ідей нема</li>
+                                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg> Важко знайти хороших людей</li>
+                                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg> Всі втомлені і їм байдуже</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="layer-tip purple">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+                                <strong>Простий тест:</strong> запишіть на відео, як Ви розповідаєте про свої цілі. Якщо обличчя світиться — все ок. Якщо ні — цілі не Ваші.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- ========== LAYER 5: ХТО ВИ Є ========== -->
+                <div class="layer-item layer-5">
+                    <div class="layer-header" onclick="toggleLayerItem(this)">
+                        <div class="layer-num">5</div>
+                        <div class="layer-info">
+                            <h4 class="layer-title">ХТО ВИ Є</h4>
+                            <p class="layer-subtitle">Рівень переконань і его</p>
+                        </div>
+                        <div class="layer-arrow">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                        </div>
+                    </div>
+                    <div class="layer-body">
+                        <div class="layer-content">
+                            <p class="layer-text">
+                                Найглибший шар. І найпідступніший.
+                            </p>
+                            <p class="layer-text">
+                                Це голоси в голові, які керують Вашими рішеннями. Ви їх навіть не помічаєте, але вони гальмують все.
+                            </p>
+                            
+                            <!-- Як це працює -->
+                            <div class="layer-box">
+                                <div class="layer-box-title" style="color: #dc2626;">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
+                                    Як це працює?
+                                </div>
+                                <p class="layer-text" style="margin-bottom: 0;">
+                                    Уявіть: Вам пропонують співпрацю, яка може подвоїти прибуток. Але в голові спрацьовує: «Це занадто добре, щоб бути правдою» або «Я не готовий до такого росту». І Ви відмовляєтесь. Начебто з логічних причин. Але насправді — через страх.
+                                </p>
+                            </div>
+                            
+                            <!-- Типові відмазки -->
+                            <div class="layer-box">
+                                <div class="layer-box-title" style="color: #dc2626;">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 15h8"/><path d="M9 9h.01"/><path d="M15 9h.01"/></svg>
+                                    Типові відмазки, які насправді є страхами:
+                                </div>
+                                
+                                <div class="tool-item" style="border-color: var(--red);">
+                                    <strong>«В мене специфічний бізнес, ці методи не для мене»</strong>
+                                    <p>Це класика. Кожен думає, що його бізнес особливий. Але базові принципи управління працюють скрізь: у кафе, в автосервісі, в клініці, в будівництві. «Специфіка» — це спосіб не міняти нічого.</p>
+                                </div>
+                                
+                                <div class="tool-item" style="border-color: var(--red);">
+                                    <strong>«В мене маленька компанія, нам це не потрібно»</strong>
+                                    <p>Саме маленьким компаніям найбільше потрібні системи. Бо коли Вас 3-5 людей і Ви все тримаєте в голові — Ви і є вузьке місце. Бізнес не може вирости більше, ніж Ваша голова може втримати.</p>
+                                </div>
+                                
+                                <div class="tool-item" style="border-color: var(--red);">
+                                    <strong>«Це дорого, я краще сам розберусь»</strong>
+                                    <p>Порахуйте, скільки Ви втрачаєте щомісяця через хаос, через втрачених клієнтів, через неефективних працівників. Ось ця сума — ціна «сам розберусь».</p>
+                                </div>
+                                
+                                <div class="tool-item" style="border-color: var(--red);">
+                                    <strong>«Мені б спочатку вирішити поточні проблеми»</strong>
+                                    <p>Поточні проблеми ніколи не закінчаться. Вони будуть завжди. Питання — чи будете Ви вічно гасити пожежі, чи побудуєте систему, де пожеж менше.</p>
+                                </div>
+                                
+                                <div class="tool-item" style="border-color: var(--red);">
+                                    <strong>«Я вже пробував консультантів — не допомогло»</strong>
+                                    <p>Можливо. Але один поганий лікар не означає, що медицина не працює. Питання: що саме не спрацювало і чому?</p>
+                                </div>
+                                
+                                <div class="tool-item" style="border-color: var(--red);">
+                                    <strong>«Мої працівники не будуть це робити»</strong>
+                                    <p>Якщо працівники не роблять те, що треба — це не проблема консультанта. Це проблема управління. І саме це треба виправляти.</p>
+                                </div>
+                                
+                                <div class="tool-item" style="border-color: var(--red);">
+                                    <strong>«Зараз не час, ось після Нового року / літа / кризи...»</strong>
+                                    <p>Ідеального часу не буде ніколи. Поки Ви чекаєте — конкуренти ростуть.</p>
+                                </div>
+                                
+                                <div class="tool-item" style="border-color: var(--red);">
+                                    <strong>«Я повинен все контролювати сам»</strong>
+                                    <p>Це не сила, це страх. Страх, що без Вас все розвалиться. Але якщо бізнес не працює без Вас — у Вас немає бізнесу. У Вас є робота, яку Ви самі собі створили.</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Таблиця переконань -->
+                            <div class="layer-box" style="overflow-x: auto;">
+                                <div class="layer-box-title" style="color: #dc2626;">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+                                    Ще типові переконання-блоки:
+                                </div>
+                                <table class="layer-table">
+                                    <thead style="background: var(--red-light);">
+                                        <tr>
+                                            <th style="border-bottom-color: var(--red);">Переконання</th>
+                                            <th style="border-bottom-color: var(--red);">До чого веде</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><td>«Я недостатньо розумний для великого бізнесу»</td><td>Не берете на себе виклики, залишаєтесь маленьким</td></tr>
+                                        <tr><td>«Всі багаті — крадії або шахраї»</td><td>Підсвідомо гальмуєте свій ріст</td></tr>
+                                        <tr><td>«Клієнти не заплатять більше»</td><td>Занижуєте ціни, мало заробляєте</td></tr>
+                                        <tr><td>«Хороших працівників не існує»</td><td>Не шукаєте нормально, миритесь з поганими</td></tr>
+                                        <tr><td>«Якщо не вийде — я невдаха»</td><td>Боїтесь ризикувати, не пробуєте нове</td></tr>
+                                        <tr><td>«Треба все робити ідеально»</td><td>Відкладаєте запуск, втрачаєте час</td></tr>
+                                        <tr><td>«Мій бізнес унікальний, правила не для мене»</td><td>Не вчитесь на чужому досвіді, робите ті самі помилки</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                            <!-- Про гординю -->
+                            <div class="layer-box">
+                                <div class="layer-box-title" style="color: #dc2626;">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                    Окремо про гординю
+                                </div>
+                                <p class="layer-text">Гординя — це коли:</p>
+                                <ul class="layer-list" style="margin-bottom: 16px;">
+                                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg> «Я завжди правий»</li>
+                                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg> «Я сам знаю краще»</li>
+                                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg> «Мені не потрібна допомога»</li>
+                                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg> «Я особливий, ці правила не для мене»</li>
+                                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg> «Консультант не зрозуміє мій бізнес»</li>
+                                </ul>
+                                <p style="font-size: 1rem; color: var(--red); font-weight: 700; margin-bottom: 12px;">Гординя = ізоляція = втрата можливостей.</p>
+                                <p class="layer-text" style="margin-bottom: 0;">
+                                    Найуспішніші люди — впевнені, але відкриті до нового. Вони наймають тренерів, консультантів, менторів. Бо розуміють: погляд збоку бачить те, що Ви не бачите зсередини.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- ========== РІЗНИЦЯ В МИСЛЕННІ ========== -->
+            <div class="mindset-grid">
+                <div class="mindset-col bad">
+                    <h4>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+                        Мислення, яке гальмує
+                    </h4>
+                    <ul class="mindset-list">
+                        <li>«Це не спрацює»</li>
+                        <li>«Чому я буду як усі»</li>
+                        <li>«Ніхто не зробить як я»</li>
+                        <li>«В мене немає грошей на це»</li>
+                        <li>«Мій випадок особливий»</li>
+                    </ul>
+                </div>
+                <div class="mindset-col good">
+                    <h4>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        Мислення, яке рухає
+                    </h4>
+                    <ul class="mindset-list">
+                        <li>«А що якщо спрацює?»</li>
+                        <li>«Якщо всі так роблять — мабуть, є сенс»</li>
+                        <li>«Хтось зробить по-іншому — і це може бути краще»</li>
+                        <li>«Скільки я втрачаю без цього?»</li>
+                        <li>«Базові принципи працюють скрізь»</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- ========== ЩО РОБИТИ ПРЯМО ЗАРАЗ ========== -->
+            <div class="action-block">
+                <h3>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    Що робити прямо зараз
+                </h3>
+                
+                <div class="action-item">
+                    <h4>1. Анкета «Бізнес через рік»</h4>
+                    <p>Запишіть конкретні цифри:</p>
+                    <ul style="margin: 8px 0 0 0; padding-left: 20px; opacity: 0.9;">
+                        <li>Скільки хочете виручки?</li>
+                        <li>Скільки чистого прибутку?</li>
+                        <li>Скільки клієнтів?</li>
+                        <li>Скільки працівників?</li>
+                        <li>Яке територіальне покриття?</li>
+                    </ul>
+                    <p style="margin-top: 12px; font-size: 0.85rem; opacity: 0.8;">Якщо є партнер — нехай заповнить окремо. Потім порівняйте. Якщо цифри різні — у вас проблема на 4-му шарі.</p>
+                </div>
+                
+                <div class="action-item">
+                    <h4>2. Запишіть свої обмеження</h4>
+                    <p>Що заважає досягти цих цифр прямо зараз?</p>
+                    <ul style="margin: 8px 0 0 0; padding-left: 20px; opacity: 0.9;">
+                        <li>Мало клієнтів?</li>
+                        <li>Мало грошей?</li>
+                        <li>Немає людей?</li>
+                        <li>Не вистачає часу?</li>
+                        <li>Не знаю як?</li>
+                    </ul>
+                    <p style="margin-top: 12px; font-size: 0.85rem; opacity: 0.8;">Якщо здається, що нічого не заважає — запитайте себе чесно: <strong>«Чому я ще не там?»</strong></p>
+                </div>
+                
+                <div class="action-item">
+                    <h4>3. Визначте свій шар</h4>
+                    <p>На якому шарі Ваша справжня проблема?</p>
+                    <ul style="margin: 8px 0 0 0; padding-left: 20px; opacity: 0.9;">
+                        <li>Мало роблю? → Шар 1</li>
+                        <li>Немає системи? → Шар 2</li>
+                        <li>Мала маржа, не той продукт? → Шар 3</li>
+                        <li>Немає мотивації, конфлікт з партнером? → Шар 4</li>
+                        <li>Страхи, відмазки, «я особливий»? → Шар 5</li>
+                    </ul>
+                </div>
+                
+                <div class="action-item">
+                    <h4>4. Фокус на прибуток</h4>
+                    <p>Не на оборот. Не на кількість клієнтів. Не на лайки в соцмережах.</p>
+                    <p style="margin-top: 8px;"><strong>Скільки грошей залишається в кінці місяця</strong> — ось що важливо.</p>
+                </div>
+            </div>
+            
+            <!-- ========== ГОЛОВНЕ ПРАВИЛО ========== -->
+            <div class="final-rule">
+                <h3>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    Головне правило прийняття рішень
+                </h3>
+                <p>Не можете вирішити — робити чи ні?</p>
+                <p class="highlight">Значить немає чіткої мети.</p>
+                <p>Коли є мета — все просто:</p>
+                <ul style="list-style: none; padding: 0; margin: 16px 0;">
+                    <li>Ця дія веде до мети? → Робите</li>
+                    <li>Не веде? → Не робите</li>
+                </ul>
+                <p style="font-size: 0.95rem; opacity: 0.9;">Якщо мета — подвоїти прибуток за рік, то питання «чи йти на навчання з управління» вирішується само собою.</p>
+                <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.2);">
+                    <p style="font-style: italic; opacity: 0.85; font-size: 1.1rem;">Яка Ваша мета? І на якому шарі Ви застрягли?</p>
+                </div>
+            </div>
+            
+            <div class="nav-buttons">
+                <button class="nav-btn" onclick="navigateToSection(2)">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
+                    Назад
+                </button>
+                <button class="nav-btn primary" onclick="navigateToSection(4)">
                     Далі: Клініка
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
                 </button>
             </div>
         </div>
         
-        <!-- SECTION 3: CLINIC DIAGNOSTICS -->
-        <div class="section hidden" id="section3">
+        
+        <!-- SECTION 4: CLINIC DIAGNOSTICS -->
+        <div class="section hidden" id="section4">
             <div class="section-header">
-                <h2><span class="section-number">3</span> Діагностика по функціях (Клініка)</h2>
+                <h2><span class="section-number">4</span> Діагностика по функціях (Клініка)</h2>
             </div>
             
             <!-- Intro: Що таке функція -->
@@ -6562,19 +7528,19 @@
             </div>
             
             <div class="nav-buttons">
-                <button class="nav-btn" onclick="navigateToSection(2)">
+                <button class="nav-btn" onclick="navigateToSection(3)">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
                     Назад
                 </button>
-                <button class="nav-btn primary" onclick="navigateToSection(4)">
+                <button class="nav-btn primary" onclick="navigateToSection(5)">
                     Далі: Виробництво
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
                 </button>
             </div>
         </div>
 
-        <!-- SECTION 4: MANUFACTURING DIAGNOSTICS -->
-        <div class="section hidden" id="section4">
+        <!-- SECTION 5: MANUFACTURING DIAGNOSTICS -->
+        <div class="section hidden" id="section5">
             <div class="section-header">
                 <h2><span class="section-number">4</span> Діагностика по функціях (Виробництво)</h2>
             </div>
@@ -7162,21 +8128,21 @@
             </div>
             
             <div class="nav-buttons">
-                <button class="nav-btn" onclick="navigateToSection(3)">
+                <button class="nav-btn" onclick="navigateToSection(4)">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
                     Назад
                 </button>
-                <button class="nav-btn primary" onclick="navigateToSection(5)">
+                <button class="nav-btn primary" onclick="navigateToSection(6)">
                     Далі: Харчове виробництво
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
                 </button>
             </div>
         </div>
 
-        <!-- SECTION 5: FOOD MANUFACTURING DIAGNOSTICS -->
-        <div class="section hidden" id="section5">
+        <!-- SECTION 6: FOOD MANUFACTURING DIAGNOSTICS -->
+        <div class="section hidden" id="section6">
             <div class="section-header">
-                <h2><span class="section-number">5</span> Діагностика по функціях (Харчове виробництво)</h2>
+                <h2><span class="section-number">6</span> Діагностика по функціях (Харчове виробництво)</h2>
             </div>
             
             <!-- Intro: Що таке функція -->
@@ -7796,21 +8762,21 @@
             </div>
             
             <div class="nav-buttons">
-                <button class="nav-btn" onclick="navigateToSection(4)">
+                <button class="nav-btn" onclick="navigateToSection(5)">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
                     Назад
                 </button>
-                <button class="nav-btn primary" onclick="navigateToSection(6)">
+                <button class="nav-btn primary" onclick="navigateToSection(7)">
                     Далі: Діагностика 41
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
                 </button>
             </div>
         </div>
 
-        <!-- SECTION 6: DIAGNOSTICS 41 -->
-        <div class="section hidden" id="section6">
+        <!-- SECTION 7: DIAGNOSTICS 41 -->
+        <div class="section hidden" id="section7">
             <div class="section-header">
-                <h2><span class="section-number">6</span> Діагностика 41 питання</h2>
+                <h2><span class="section-number">7</span> Діагностика 41 питання</h2>
             </div>
             <div class="progress-indicator">
                 <strong>Прогрес:</strong> Відповіли на <span id="answeredCount">0</span> з 41
@@ -7825,17 +8791,17 @@
                 <p style="margin-top: 12px; color: var(--text-gray);">Перейдіть до калькулятора для розрахунку втрат.</p>
             </div>
             <div class="nav-buttons">
-                <button class="nav-btn" onclick="navigateToSection(5)">Назад</button>
+                <button class="nav-btn" onclick="navigateToSection(6)">Назад</button>
                 <button class="nav-btn" onclick="exportToExcel()" style="background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                     Експорт Excel
                 </button>
-                <button class="nav-btn primary" onclick="navigateToSection(7)">Далі до калькулятора</button>
+                <button class="nav-btn primary" onclick="navigateToSection(8)">Далі до калькулятора</button>
             </div>
         </div>
-        <div class="section hidden" id="section7">
+        <div class="section hidden" id="section8">
             <div class="section-header">
-                <h2><span class="section-number">7</span> Калькулятор втрат</h2>
+                <h2><span class="section-number">8</span> Калькулятор втрат</h2>
             </div>
             <div class="calculator-input-box">
                 <h4>Вкажіть місячний оборот вашого бізнесу</h4>
@@ -7942,13 +8908,13 @@
                 </div>
             </div>
             <div class="nav-buttons">
-                <button class="nav-btn" onclick="navigateToSection(3)">Назад</button>
-                <button class="nav-btn primary" onclick="navigateToSection(8)">Далі: Система</button>
+                <button class="nav-btn" onclick="navigateToSection(7)">Назад</button>
+                <button class="nav-btn primary" onclick="navigateToSection(9)">Далі: Система</button>
             </div>
         </div>
-        <div class="section hidden" id="section8">
+        <div class="section hidden" id="section9">
             <div class="section-header">
-                <h2><span class="section-number">8</span> TALKO Management System</h2>
+                <h2><span class="section-number">9</span> TALKO Management System</h2>
             </div>
             
             <!-- TALKO LANDING EMBED -->
@@ -9346,15 +10312,15 @@
             </div>
             
             <div class="nav-buttons">
-                <button class="nav-btn" onclick="navigateToSection(5)">Назад</button>
-                <button class="nav-btn primary" onclick="navigateToSection(9)">Далі: Карта →</button>
+                <button class="nav-btn" onclick="navigateToSection(8)">Назад</button>
+                <button class="nav-btn primary" onclick="navigateToSection(10)">Далі: Карта →</button>
             </div>
         </div>
 
-        <!-- SECTION 9: FULL SYSTEM MAP -->
-        <div class="section hidden" id="section9">
+        <!-- SECTION 10: FULL SYSTEM MAP -->
+        <div class="section hidden" id="section10">
             <div class="section-header">
-                <h2><span class="section-number">9</span> Карта системи: 13 кроків</h2>
+                <h2><span class="section-number">10</span> Карта системи: 15 кроків</h2>
             </div>
             
             <div class="roadmap-intro-new">
@@ -9557,10 +10523,75 @@
                     </div>
                 </div>
 
-                <!-- Step 7 -->
+                <!-- Step 7: Система розпорядження + таск менеджер -->
                 <div class="timeline-step">
                     <div class="timeline-connector">
                         <div class="timeline-number">7</div>
+                        <div class="timeline-line"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h4>Система розпорядження + таск менеджер</h4>
+                            <span class="timeline-tag">СКАЗАВ ОДИН РАЗ — ЗРОБИЛИ</span>
+                        </div>
+                        
+                        <div class="timeline-substeps" style="display: grid; gap: 12px; margin-bottom: 16px;">
+                            <div style="background: var(--bg-light); border-radius: var(--radius-sm); padding: 14px; border-left: 3px solid var(--primary);">
+                                <div style="font-weight: 700; color: var(--primary-dark); margin-bottom: 8px;">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 6px;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                                    Завдання виконуються з першого разу
+                                </div>
+                                <ul style="font-size: 0.9rem; color: var(--text-gray); margin: 0; padding-left: 18px; line-height: 1.6;">
+                                    <li>Ви ставите завдання один раз</li>
+                                    <li>Його виконують вчасно, без перепитувань</li>
+                                    <li>Ви не бігаєте за людьми і не питаєте «ну що там?»</li>
+                                    <li>Ви бачите звіт: що зроблено, в якому обсязі, з яким результатом</li>
+                                </ul>
+                                <div style="font-size: 0.85rem; color: var(--primary-dark); font-weight: 600; margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--border);">
+                                    → Система замінює нагадування, контроль і пояснення
+                                </div>
+                            </div>
+                            
+                            <div style="background: var(--bg-light); border-radius: var(--radius-sm); padding: 14px; border-left: 3px solid var(--primary);">
+                                <div style="font-weight: 700; color: var(--primary-dark); margin-bottom: 8px;">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 6px;"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                                    Люди знають, що робити щодня — без вас
+                                </div>
+                                <ul style="font-size: 0.9rem; color: var(--text-gray); margin: 0; padding-left: 18px; line-height: 1.6;">
+                                    <li>Кожен співробітник чітко розуміє: що робити зранку, що в обід, що у вівторок, що у середу</li>
+                                    <li>Пріоритети вже розставлені системою, а не вашим голосом</li>
+                                </ul>
+                                <div style="font-size: 0.85rem; color: var(--primary-dark); font-weight: 600; margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--border);">
+                                    → Немає хаосу "що робити зараз?" — є зрозумілий ритм роботи
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-results">
+                            <div class="timeline-result profit">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                                <span><strong>Прибуток:</strong> завдання виконуються вчасно → менше втрат на переробки та затримки</span>
+                            </div>
+                            <div class="timeline-result people">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                                <span><strong>Люди:</strong> кожен знає свої задачі; зникають конфлікти "хто винен"</span>
+                            </div>
+                            <div class="timeline-result time">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                <span><strong>Час:</strong> ви не контролюєте кожного — система робить це за вас</span>
+                            </div>
+                        </div>
+                        <div class="timeline-dependency">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="15 18 9 12 15 6"/></svg>
+                            <span><strong>Чому без кроку 6 не працює:</strong> якщо не знаєте вузьке місце — будете ставити неправильні завдання. Люди будуть зайняті, але результату не буде.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 8 -->
+                <div class="timeline-step">
+                    <div class="timeline-connector">
+                        <div class="timeline-number">8</div>
                         <div class="timeline-line"></div>
                     </div>
                     <div class="timeline-content">
@@ -9583,15 +10614,15 @@
                         </div>
                         <div class="timeline-dependency">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="15 18 9 12 15 6"/></svg>
-                            <span><strong>Чому без кроку 6 не працює:</strong> якщо немає аналізу вузьких місць — RADAR не знає контекст. Він буде давати загальні поради замість точних рішень.</span>
+                            <span><strong>Чому без кроку 7 не працює:</strong> якщо немає системи розпоряджень — RADAR не знає контекст задач. Він буде давати загальні поради замість точних рішень.</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Step 8 -->
+                <!-- Step 9 -->
                 <div class="timeline-step">
                     <div class="timeline-connector">
-                        <div class="timeline-number">8</div>
+                        <div class="timeline-number">9</div>
                         <div class="timeline-line"></div>
                     </div>
                     <div class="timeline-content">
@@ -9614,15 +10645,15 @@
                         </div>
                         <div class="timeline-dependency">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="15 18 9 12 15 6"/></svg>
-                            <span><strong>Чому без кроку 7 не працює:</strong> якщо люди не вміють приходити з рішеннями — вони не будуть правильно використовувати AI-навчання. Будуть чекати готових відповідей.</span>
+                            <span><strong>Чому без кроку 8 не працює:</strong> якщо люди не вміють приходити з рішеннями — вони не будуть правильно використовувати AI-навчання. Будуть чекати готових відповідей.</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Step 9 -->
+                <!-- Step 10 -->
                 <div class="timeline-step">
                     <div class="timeline-connector">
-                        <div class="timeline-number">9</div>
+                        <div class="timeline-number">10</div>
                         <div class="timeline-line"></div>
                     </div>
                     <div class="timeline-content">
@@ -9645,15 +10676,121 @@
                         </div>
                         <div class="timeline-dependency">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="15 18 9 12 15 6"/></svg>
-                            <span><strong>Чому без кроку 8 не працює:</strong> якщо люди не навчені — вони будуть робити фінансові помилки. Система буде показувати "криві" цифри.</span>
+                            <span><strong>Чому без кроку 9 не працює:</strong> якщо люди не навчені — вони будуть робити фінансові помилки. Система буде показувати "криві" цифри.</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Step 10 -->
+                <!-- Step 11: Система маркетингу і продажів -->
                 <div class="timeline-step">
                     <div class="timeline-connector">
-                        <div class="timeline-number">10</div>
+                        <div class="timeline-number">11</div>
+                        <div class="timeline-line"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h4>Система маркетингу і продажів</h4>
+                            <span class="timeline-tag">7 ЕЛЕМЕНТІВ</span>
+                        </div>
+                        <p style="font-size: 0.9rem; color: var(--text-gray); margin-bottom: 16px; font-style: italic;">Якщо один елемент не працює — зливається весь результат</p>
+                        
+                        <div class="timeline-substeps" style="display: grid; gap: 12px; margin-bottom: 16px;">
+                            <div style="background: var(--bg-light); border-radius: var(--radius-sm); padding: 12px; border-left: 3px solid var(--primary);">
+                                <div style="font-weight: 700; color: var(--primary-dark); margin-bottom: 6px;">11.1 Основа і контроль</div>
+                                <ul style="font-size: 0.85rem; color: var(--text-gray); margin: 0; padding-left: 16px;">
+                                    <li>Чітка ціль маркетингу (не "більше заявок")</li>
+                                    <li>Правильні метрики замість "відчуттів"</li>
+                                    <li>Розуміння, де саме зливаються гроші</li>
+                                </ul>
+                                <div style="font-size: 0.8rem; color: var(--primary-dark); font-weight: 600; margin-top: 8px;">→ Ви бачите реальну картину</div>
+                            </div>
+                            
+                            <div style="background: var(--bg-light); border-radius: var(--radius-sm); padding: 12px; border-left: 3px solid var(--primary);">
+                                <div style="font-weight: 700; color: var(--primary-dark); margin-bottom: 6px;">11.2 Офер і тексти, які продають</div>
+                                <ul style="font-size: 0.85rem; color: var(--text-gray); margin: 0; padding-left: 16px;">
+                                    <li>Формуємо сильний офер під вашу нішу</li>
+                                    <li>Тексти, які фільтрують нецільових</li>
+                                    <li>AI як інструмент, а не іграшка</li>
+                                </ul>
+                                <div style="font-size: 0.8rem; color: var(--primary-dark); font-weight: 600; margin-top: 8px;">→ Заявки стають якіснішими</div>
+                            </div>
+                            
+                            <div style="background: var(--bg-light); border-radius: var(--radius-sm); padding: 12px; border-left: 3px solid var(--primary);">
+                                <div style="font-weight: 700; color: var(--primary-dark); margin-bottom: 6px;">11.3 Сайт, який не зливає трафік</div>
+                                <ul style="font-size: 0.85rem; color: var(--text-gray); margin: 0; padding-left: 16px;">
+                                    <li>Простий, зрозумілий лендінг</li>
+                                    <li>Логіка, що веде до дії</li>
+                                    <li>Інтеграція з ботом та аналітикою</li>
+                                </ul>
+                                <div style="font-size: 0.8rem; color: var(--primary-dark); font-weight: 600; margin-top: 8px;">→ Реклама починає окупатись</div>
+                            </div>
+                            
+                            <div style="background: var(--bg-light); border-radius: var(--radius-sm); padding: 12px; border-left: 3px solid var(--primary);">
+                                <div style="font-weight: 700; color: var(--primary-dark); margin-bottom: 6px;">11.4 Telegram-воронка і бот</div>
+                                <ul style="font-size: 0.85rem; color: var(--text-gray); margin: 0; padding-left: 16px;">
+                                    <li>Автоматичний відбір клієнтів</li>
+                                    <li>Кваліфікаційні питання і прогрів</li>
+                                    <li>Мінус 80% рутинних переписок</li>
+                                </ul>
+                                <div style="font-size: 0.8rem; color: var(--primary-dark); font-weight: 600; margin-top: 8px;">→ До вас доходять підготовлені клієнти</div>
+                            </div>
+                            
+                            <div style="background: var(--bg-light); border-radius: var(--radius-sm); padding: 12px; border-left: 3px solid var(--primary);">
+                                <div style="font-weight: 700; color: var(--primary-dark); margin-bottom: 6px;">11.5 Реклама без хаосу</div>
+                                <ul style="font-size: 0.85rem; color: var(--text-gray); margin: 0; padding-left: 16px;">
+                                    <li>Правильна схема запуску реклами</li>
+                                    <li>Контроль бюджету і результату</li>
+                                    <li>Відмова від "зливів у перші дні"</li>
+                                </ul>
+                                <div style="font-size: 0.8rem; color: var(--primary-dark); font-weight: 600; margin-top: 8px;">→ Стабільні заявки, а не лотерея</div>
+                            </div>
+                            
+                            <div style="background: var(--bg-light); border-radius: var(--radius-sm); padding: 12px; border-left: 3px solid var(--primary);">
+                                <div style="font-weight: 700; color: var(--primary-dark); margin-bottom: 6px;">11.6 Продажі в переписці</div>
+                                <ul style="font-size: 0.85rem; color: var(--text-gray); margin: 0; padding-left: 16px;">
+                                    <li>Готові шаблони переписок</li>
+                                    <li>Структура продаючої консультації</li>
+                                    <li>Даунсел, якщо клієнт не готовий</li>
+                                </ul>
+                                <div style="font-size: 0.8rem; color: var(--primary-dark); font-weight: 600; margin-top: 8px;">→ Більше продажів з тих самих заявок</div>
+                            </div>
+                            
+                            <div style="background: var(--bg-light); border-radius: var(--radius-sm); padding: 12px; border-left: 3px solid var(--primary);">
+                                <div style="font-weight: 700; color: var(--primary-dark); margin-bottom: 6px;">11.7 Аналітика і масштабування</div>
+                                <ul style="font-size: 0.85rem; color: var(--text-gray); margin: 0; padding-left: 16px;">
+                                    <li>Розуміння ключових цифр</li>
+                                    <li>Шаблони звітів та аналіз воронки</li>
+                                    <li>Точки росту без збільшення бюджету</li>
+                                </ul>
+                                <div style="font-size: 0.8rem; color: var(--primary-dark); font-weight: 600; margin-top: 8px;">→ Ви керуєте системою, а не вона вами</div>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-results">
+                            <div class="timeline-result profit">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                                <span><strong>Прибуток:</strong> стабільний потік клієнтів → передбачуваний дохід; кожна гривня в рекламі окупається</span>
+                            </div>
+                            <div class="timeline-result people">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                                <span><strong>Люди:</strong> менеджери закривають підготовлених клієнтів; нецільові відсіюються автоматично</span>
+                            </div>
+                            <div class="timeline-result time">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                <span><strong>Час:</strong> 80% рутинних переписок зникає; власник не "сидить у директі"</span>
+                            </div>
+                        </div>
+                        <div class="timeline-dependency">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="15 18 9 12 15 6"/></svg>
+                            <span><strong>Чому без кроку 10 не працює:</strong> якщо немає фінансової системи — незрозуміло, скільки можна витратити на рекламу і коли вона окупиться. Маркетинг буде "наосліп".</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 12 -->
+                <div class="timeline-step">
+                    <div class="timeline-connector">
+                        <div class="timeline-number">12</div>
                         <div class="timeline-line"></div>
                     </div>
                     <div class="timeline-content">
@@ -9676,15 +10813,15 @@
                         </div>
                         <div class="timeline-dependency">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="15 18 9 12 15 6"/></svg>
-                            <span><strong>Чому без кроку 9 не працює:</strong> якщо немає фінансової системи — незрозуміло, скільки коштує новачок і коли він окупиться. Найм буде "навмання".</span>
+                            <span><strong>Чому без кроку 11 не працює:</strong> якщо немає системи маркетингу — незрозуміло, скільки потрібно людей для обробки заявок. Найм буде "навмання".</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Step 11 -->
+                <!-- Step 13 -->
                 <div class="timeline-step">
                     <div class="timeline-connector">
-                        <div class="timeline-number">11</div>
+                        <div class="timeline-number">13</div>
                         <div class="timeline-line"></div>
                     </div>
                     <div class="timeline-content">
@@ -9707,15 +10844,15 @@
                         </div>
                         <div class="timeline-dependency">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="15 18 9 12 15 6"/></svg>
-                            <span><strong>Чому без кроку 10 не працює:</strong> якщо команда не укомплектована і не введена в посаду — плани будуть зриватися через "немає людей" або "вони не розуміють".</span>
+                            <span><strong>Чому без кроку 12 не працює:</strong> якщо команда не укомплектована і не введена в посаду — плани будуть зриватися через "немає людей" або "вони не розуміють".</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Step 12 -->
+                <!-- Step 14 -->
                 <div class="timeline-step">
                     <div class="timeline-connector">
-                        <div class="timeline-number">12</div>
+                        <div class="timeline-number">14</div>
                         <div class="timeline-line"></div>
                     </div>
                     <div class="timeline-content">
@@ -9733,20 +10870,20 @@
                             </div>
                             <div class="timeline-result time">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                                <span><strong>Час:</strong> зустрічі 15–25 хв замість годин; немає втрати часу</span>
+                                <span><strong>Час:</strong> наради — 30 хв замість 2 год; є ритм і структура</span>
                             </div>
                         </div>
                         <div class="timeline-dependency">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="15 18 9 12 15 6"/></svg>
-                            <span><strong>Чому без кроку 11 не працює:</strong> якщо немає системи планування — на нарадах нема про що говорити. Будуть обговорювати "все підряд" замість прогресу по плану.</span>
+                            <span><strong>Чому без кроку 13 не працює:</strong> якщо немає системи планування — наради перетворюються на "хаотичний розбір того, що горить".</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Step 13 -->
+                <!-- Step 15 -->
                 <div class="timeline-step last">
                     <div class="timeline-connector">
-                        <div class="timeline-number final">13</div>
+                        <div class="timeline-number final">15</div>
                     </div>
                     <div class="timeline-content final">
                         <div class="timeline-header">
@@ -9769,7 +10906,7 @@
                         </div>
                         <div class="timeline-dependency">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="15 18 9 12 15 6"/></svg>
-                            <span><strong>Чому без кроку 12 не працює:</strong> якщо немає нарад з чітким форматом — делегування перетворюється на "передав і забув". Немає контролю, немає зворотного зв'язку.</span>
+                            <span><strong>Чому без кроку 14 не працює:</strong> якщо немає нарад з чітким форматом — делегування перетворюється на "передав і забув". Немає контролю, немає зворотного зв'язку.</span>
                         </div>
                     </div>
                 </div>
@@ -9781,7 +10918,7 @@
                 <div class="roadmap-final-icon">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="36" height="36"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
                 </div>
-                <h3>13 кроків = Бізнес на автопілоті</h3>
+                <h3>15 кроків = Бізнес на автопілоті</h3>
                 <p>Пропустити крок неможливо — кожен наступний тримається на попередньому. Це не набір інструментів, а <strong>єдина технологія</strong>.</p>
                 <div class="roadmap-final-result">
                     <span>Результат:</span> прибуток росте, а ваш час — звільняється
@@ -9789,15 +10926,15 @@
             </div>
             
             <div class="nav-buttons">
-                <button class="nav-btn" onclick="navigateToSection(8)">Назад</button>
-                <button class="nav-btn primary" onclick="navigateToSection(10)">Далі: Тарифи →</button>
+                <button class="nav-btn" onclick="navigateToSection(9)">Назад</button>
+                <button class="nav-btn primary" onclick="navigateToSection(11)">Далі: Тарифи →</button>
             </div>
         </div>
 
-        <!-- SECTION 10: PRICING -->
-        <div class="section hidden" id="section10">
+        <!-- SECTION 11: PRICING -->
+        <div class="section hidden" id="section11">
             <div class="section-header">
-                <h2><span class="section-number">10</span> Тарифи</h2>
+                <h2><span class="section-number">11</span> Тарифи</h2>
             </div>
             
             <!-- REGULAR PRICING - Full Cards -->
@@ -10112,7 +11249,7 @@
             </div>
             
             <div class="nav-buttons" style="margin-top: 30px;">
-                <button class="nav-btn" onclick="navigateToSection(6)">Назад</button>
+                <button class="nav-btn" onclick="navigateToSection(10)">Назад</button>
                 <button class="nav-btn primary" onclick="exportFullReport()">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                     Завантажити звіт
@@ -11255,16 +12392,25 @@
             if (!wasActive) item.classList.add('active');
         }
         
+        function toggleLayerItem(header) {
+            const item = header.parentElement;
+            const wasActive = item.classList.contains('active');
+            // Close all layer items
+            document.querySelectorAll('.layer-item').forEach(el => el.classList.remove('active'));
+            // Open clicked if wasn't active
+            if (!wasActive) item.classList.add('active');
+        }
+        
         function navigateToSection(sectionNumber) {
-            for (let i = 1; i <= 10; i++) {
+            for (let i = 1; i <= 11; i++) {
                 const section = document.getElementById('section' + i);
                 if (section) section.classList.toggle('hidden', i !== sectionNumber);
             }
             const tabs = document.querySelectorAll('.nav-tab');
             tabs.forEach((tab, index) => { tab.classList.toggle('active', index + 1 === sectionNumber); });
-            document.getElementById('progressFill').style.width = (sectionNumber / 10 * 100) + '%';
+            document.getElementById('progressFill').style.width = (sectionNumber / 11 * 100) + '%';
             window.scrollTo({top: 0, behavior: 'smooth'});
-            if (sectionNumber === 7) calculateLosses();
+            if (sectionNumber === 8) calculateLosses();
         }
         function exportToExcel() {
             const data = [];
