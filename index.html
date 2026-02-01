@@ -2775,6 +2775,292 @@
             padding-top: 20px;
         }
         
+        /* ===== NEW TIMELINE STYLES ===== */
+        .roadmap-intro-new {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            background: linear-gradient(135deg, #0a0f0a 0%, #1a2e1a 100%);
+            border: 1px solid var(--primary);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 24px;
+        }
+        .roadmap-intro-icon {
+            width: 56px;
+            height: 56px;
+            min-width: 56px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .roadmap-intro-icon svg { color: #0a0f0a; }
+        .roadmap-intro-text h3 { color: #fff; font-size: 1.1rem; margin-bottom: 4px; }
+        .roadmap-intro-text p { color: rgba(255,255,255,0.8); font-size: 0.85rem; margin: 0; }
+        
+        .timeline-container {
+            position: relative;
+            padding: 0;
+        }
+        
+        .timeline-step {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 0;
+        }
+        .timeline-step.last { margin-bottom: 0; }
+        
+        .timeline-connector {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 40px;
+            min-width: 40px;
+        }
+        .timeline-number {
+            width: 36px;
+            height: 36px;
+            background: var(--primary);
+            color: #0a0f0a;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 14px;
+            z-index: 2;
+            flex-shrink: 0;
+        }
+        .timeline-number.final {
+            width: 44px;
+            height: 44px;
+            font-size: 16px;
+            background: linear-gradient(135deg, var(--primary) 0%, #0f9d58 100%);
+            box-shadow: 0 0 20px rgba(34, 197, 94, 0.4);
+        }
+        .timeline-line {
+            width: 2px;
+            flex: 1;
+            background: linear-gradient(180deg, var(--primary) 0%, rgba(34,197,94,0.3) 100%);
+            margin: 4px 0;
+        }
+        .timeline-step.last .timeline-line { display: none; }
+        
+        .timeline-content {
+            flex: 1;
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 12px;
+            transition: all 0.3s;
+        }
+        .timeline-content:hover {
+            border-color: var(--primary);
+            box-shadow: 0 4px 16px rgba(34, 197, 94, 0.1);
+        }
+        .timeline-content.final {
+            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+            border-color: var(--primary);
+        }
+        
+        .timeline-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+        .timeline-header h4 {
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            margin: 0;
+        }
+        .timeline-tag {
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        .timeline-tag.start {
+            background: var(--blue);
+            color: #fff;
+        }
+        .timeline-tag.finish {
+            background: var(--primary);
+            color: #0a0f0a;
+        }
+        
+        .timeline-results {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+        .timeline-result {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            padding: 8px 10px;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            line-height: 1.4;
+        }
+        .timeline-result svg {
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .timeline-result.profit {
+            background: #f0fdf4;
+            color: #166534;
+        }
+        .timeline-result.profit svg { color: var(--primary); }
+        .timeline-result.people {
+            background: #eff6ff;
+            color: #1e40af;
+        }
+        .timeline-result.people svg { color: var(--blue); }
+        .timeline-result.time {
+            background: #fef3c7;
+            color: #92400e;
+        }
+        .timeline-result.time svg { color: #d97706; }
+        .timeline-result strong { font-weight: 600; }
+        
+        .timeline-warning {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            padding: 10px 12px;
+            background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+            border-left: 3px solid var(--red);
+            border-radius: 0 8px 8px 0;
+            font-size: 0.8rem;
+            color: #991b1b;
+        }
+        .timeline-warning svg {
+            flex-shrink: 0;
+            color: var(--red);
+        }
+        .timeline-warning.first {
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            border-left-color: var(--blue);
+            color: #1e40af;
+        }
+        .timeline-warning.first svg { color: var(--blue); }
+        
+        .timeline-dependency {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            padding: 10px 12px;
+            background: linear-gradient(135deg, #fef2f2 0%, #fecaca 100%);
+            border-radius: 8px;
+            font-size: 0.8rem;
+            color: #991b1b;
+            border: 1px solid #fca5a5;
+        }
+        .timeline-dependency svg {
+            flex-shrink: 0;
+            color: var(--red);
+            margin-top: 2px;
+        }
+        .timeline-dependency strong { color: #dc2626; }
+        
+        .roadmap-final-new {
+            background: linear-gradient(135deg, #0a0f0a 0%, #1a2e1a 100%);
+            border: 2px solid var(--primary);
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+            margin-top: 24px;
+        }
+        .roadmap-final-new .roadmap-final-icon {
+            width: 64px;
+            height: 64px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+        }
+        .roadmap-final-new .roadmap-final-icon svg { color: #0a0f0a; }
+        .roadmap-final-new h3 {
+            color: #fff;
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+        .roadmap-final-new p {
+            color: rgba(255,255,255,0.8);
+            font-size: 0.9rem;
+            margin-bottom: 16px;
+        }
+        .roadmap-final-new strong { color: var(--primary); }
+        .roadmap-final-result {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(34, 197, 94, 0.15);
+            border: 1px solid var(--primary);
+            border-radius: 20px;
+            padding: 10px 20px;
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        .roadmap-final-result span { color: rgba(255,255,255,0.7); font-weight: 400; }
+        
+        /* Mobile Timeline */
+        @media (max-width: 600px) {
+            .roadmap-intro-new {
+                flex-direction: column;
+                text-align: center;
+                padding: 16px;
+            }
+            .roadmap-intro-icon { width: 48px; height: 48px; min-width: 48px; }
+            .roadmap-intro-icon svg { width: 24px; height: 24px; }
+            .roadmap-intro-text h3 { font-size: 1rem; }
+            .roadmap-intro-text p { font-size: 0.8rem; }
+            
+            .timeline-step { gap: 10px; }
+            .timeline-connector { width: 32px; min-width: 32px; }
+            .timeline-number { width: 28px; height: 28px; font-size: 11px; }
+            .timeline-number.final { width: 34px; height: 34px; font-size: 13px; }
+            .timeline-line { width: 2px; }
+            
+            .timeline-content { padding: 12px; margin-bottom: 8px; }
+            .timeline-header h4 { font-size: 0.85rem; }
+            .timeline-tag { font-size: 0.6rem; padding: 2px 6px; }
+            
+            .timeline-results { gap: 6px; }
+            .timeline-result { 
+                padding: 6px 8px; 
+                font-size: 0.75rem; 
+                gap: 6px;
+            }
+            .timeline-result svg { width: 14px; height: 14px; }
+            
+            .timeline-warning,
+            .timeline-dependency {
+                padding: 8px 10px;
+                font-size: 0.75rem;
+                gap: 6px;
+            }
+            .timeline-warning svg,
+            .timeline-dependency svg { width: 14px; height: 14px; }
+            
+            .roadmap-final-new { padding: 16px; margin-top: 16px; }
+            .roadmap-final-new .roadmap-final-icon { width: 48px; height: 48px; margin-bottom: 12px; }
+            .roadmap-final-new .roadmap-final-icon svg { width: 24px; height: 24px; }
+            .roadmap-final-new h3 { font-size: 1rem; }
+            .roadmap-final-new p { font-size: 0.8rem; }
+            .roadmap-final-result { padding: 8px 14px; font-size: 0.8rem; }
+        }
+
         /* ===== ACCORDION STYLES ===== */
         .modules-accordion {
             max-width: 800px;
@@ -9068,532 +9354,422 @@
         <!-- SECTION 9: FULL SYSTEM MAP -->
         <div class="section hidden" id="section9">
             <div class="section-header">
-                <h2><span class="section-number">9</span> Повна карта системи</h2>
-                <p class="section-subtitle">Що дає кожен блок і що буде, якщо його не зробити</p>
+                <h2><span class="section-number">9</span> Карта системи: 13 кроків</h2>
             </div>
             
-            <div class="roadmap-intro">
-                <p>24 блоки, які перетворюють хаос на систему. Кожен важливий — пропустите один, і бізнес знову сяде на вас.</p>
+            <div class="roadmap-intro-new">
+                <div class="roadmap-intro-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="32" height="32"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                </div>
+                <div class="roadmap-intro-text">
+                    <h3>Це лінійна технологія</h3>
+                    <p>Кожен наступний інструмент працює тільки якщо зроблений попередній. Пропустити крок = зламати все, що далі.</p>
+                </div>
             </div>
 
-            <div class="roadmap-accordion">
+            <!-- Timeline Container -->
+            <div class="timeline-container">
                 
-                <!-- ФУНДАМЕНТ -->
-                <div class="roadmap-category">
-                    <div class="roadmap-category-header" onclick="toggleRoadmapCategory(this)">
-                        <div class="roadmap-category-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><path d="M3 21h18"/><path d="M5 21V7l8-4 8 4v14"/><path d="M9 21v-8h6v8"/></svg>
-                        </div>
-                        <div class="roadmap-category-info">
-                            <h3>ФУНДАМЕНТ</h3>
-                            <span>3 блоки — база, без якої нічого не працює</span>
-                        </div>
-                        <div class="roadmap-category-arrow">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><polyline points="6 9 12 15 18 9"/></svg>
-                        </div>
+                <!-- Step 1 -->
+                <div class="timeline-step">
+                    <div class="timeline-connector">
+                        <div class="timeline-number">1</div>
+                        <div class="timeline-line"></div>
                     </div>
-                    <div class="roadmap-category-body">
-                        <div class="roadmap-item">
-                            <div class="roadmap-item-num">1</div>
-                            <div class="roadmap-item-content">
-                                <h4>Точка А — чесна картина</h4>
-                                <div class="roadmap-gives">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                                    <span>Дивимось, де реально хаос: де губляться замовлення, де зависають задачі, де люди "тягнуть кота за хвіст".</span>
-                                </div>
-                                <div class="roadmap-risk">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
-                                    <span><strong>Без цього:</strong> будете лікувати не ту проблему. Будете думати, що «в мене люди криві», а насправді просто система крива.</span>
-                                </div>
-                                <div class="roadmap-depends">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-                                    <span><strong>Стартова точка.</strong> Без чесної діагностики — все інше буде "лікуванням симптомів".</span>
-                                </div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h4>Ціль → Задум → Ідеальна картина</h4>
+                            <span class="timeline-tag start">СТАРТ</span>
+                        </div>
+                        <div class="timeline-results">
+                            <div class="timeline-result profit">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                                <span><strong>Прибуток:</strong> компанія перестає "робити все підряд", з'являється фокус → маржа росте</span>
+                            </div>
+                            <div class="timeline-result people">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                                <span><strong>Люди:</strong> співробітники перестають тягнути в різні сторони, зникають хаотичні ініціативи</span>
+                            </div>
+                            <div class="timeline-result time">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                <span><strong>Час:</strong> немає зайвих задач, чіткі рамки → менше запитань до власника</span>
                             </div>
                         </div>
-                        <div class="roadmap-item">
-                            <div class="roadmap-item-num">2</div>
-                            <div class="roadmap-item-content">
-                                <h4>Точка Б — навіщо ви все це робите</h4>
-                                <div class="roadmap-gives">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                                    <span>Ми разом визначаємо, яким має бути бізнес, який працює без вас. Не фантазія, а чітка картинка: як має виглядати нормальна робота.</span>
-                                </div>
-                                <div class="roadmap-risk">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
-                                    <span><strong>Без цього:</strong> люди завжди чинитимуть опір. Не розуміють, до чого ці правила. Буде "а навіщо це?", "а чому ми так робимо?".</span>
-                                </div>
-                                <div class="roadmap-depends">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-                                    <span><strong>Потребує:</strong> Точка А — без розуміння "де зараз" не побудуєте "куди йдемо".</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="roadmap-item">
-                            <div class="roadmap-item-num">3</div>
-                            <div class="roadmap-item-content">
-                                <h4>Структура — хто за що відповідає</h4>
-                                <div class="roadmap-gives">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                                    <span>Розкладаємо бізнес на функції: хто тримає заявки, хто веде продаж, хто відповідає за якість, хто за терміни.</span>
-                                </div>
-                                <div class="roadmap-risk">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
-                                    <span><strong>Без цього:</strong> класика — «це не моя робота», «мене не попередили», «а хто взагалі за це відповідає?».</span>
-                                </div>
-                                <div class="roadmap-depends">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-                                    <span><strong>Потребує:</strong> Точка Б — без мети не зрозуміло, які функції потрібні.</span>
-                                </div>
-                            </div>
+                        <div class="timeline-warning first">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                            <span>Це стартова точка. Без неї всі рішення приймаються "по ситуації" і команда не знає, куди йдемо.</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- БАЗА УПРАВЛІННЯ -->
-                <div class="roadmap-category">
-                    <div class="roadmap-category-header" onclick="toggleRoadmapCategory(this)">
-                        <div class="roadmap-category-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                        </div>
-                        <div class="roadmap-category-info">
-                            <h3>БАЗА УПРАВЛІННЯ</h3>
-                            <span>6 блоків — як керувати людьми системно</span>
-                        </div>
-                        <div class="roadmap-category-arrow">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><polyline points="6 9 12 15 18 9"/></svg>
-                        </div>
+                <!-- Step 2 -->
+                <div class="timeline-step">
+                    <div class="timeline-connector">
+                        <div class="timeline-number">2</div>
+                        <div class="timeline-line"></div>
                     </div>
-                    <div class="roadmap-category-body">
-                        <div class="roadmap-item">
-                            <div class="roadmap-item-num">4</div>
-                            <div class="roadmap-item-content">
-                                <h4>Найм — кого саме шукаємо</h4>
-                                <div class="roadmap-gives">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                                    <span>Коли є структура, ясно кого наймати: хто має які задачі і які вимоги.</span>
-                                </div>
-                                <div class="roadmap-risk">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
-                                    <span><strong>Без цього:</strong> берете "кого знайшли", а не "хто потрібен". Потім мучитесь.</span>
-                                </div>
-                                <div class="roadmap-depends">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-                                    <span><strong>Потребує:</strong> Структура — без функцій не знаєте, кого шукати.</span>
-                                </div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h4>Цінний кінцевий продукт (ЦКП)</h4>
+                        </div>
+                        <div class="timeline-results">
+                            <div class="timeline-result profit">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                                <span><strong>Прибуток:</strong> команда розуміє, за що клієнт реально платить → якість росте → повторні продажі</span>
+                            </div>
+                            <div class="timeline-result people">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                                <span><strong>Люди:</strong> немає суперечок "я зробив" — є результат або його немає</span>
+                            </div>
+                            <div class="timeline-result time">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                <span><strong>Час:</strong> люди самі контролюють результат, не чекають вказівок</span>
                             </div>
                         </div>
-                        <div class="roadmap-item">
-                            <div class="roadmap-item-num">5</div>
-                            <div class="roadmap-item-content">
-                                <h4>Адаптація — як вводимо новачка</h4>
-                                <div class="roadmap-gives">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                                    <span>Нову людину заводимо по кроках: ось твоя роль, ось правила, ось як робити правильно.</span>
-                                </div>
-                                <div class="roadmap-risk">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
-                                    <span><strong>Без цього:</strong> новачок 2 місяці ходить «як теля», робить дурні помилки й з'їдає ваш час.</span>
-                                </div>
-                                <div class="roadmap-depends">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-                                    <span><strong>Потребує:</strong> Структура + Технічний провідник — без чітких функцій і стандартів нема чому навчати.</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="roadmap-item">
-                            <div class="roadmap-item-num">6</div>
-                            <div class="roadmap-item-content">
-                                <h4>Мотивація — як платимо</h4>
-                                <div class="roadmap-gives">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                                    <span>Пояснюємо: от що робиш → от який результат → от скільки заробиш.</span>
-                                </div>
-                                <div class="roadmap-risk">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
-                                    <span><strong>Без цього:</strong> гроші платяться за присутність, а не за результат. Люди працюють "аби день пройти".</span>
-                                </div>
-                                <div class="roadmap-depends">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-                                    <span><strong>Потребує:</strong> Статистики — без цифр не зрозуміло, за що платити.</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="roadmap-item">
-                            <div class="roadmap-item-num">7</div>
-                            <div class="roadmap-item-content">
-                                <h4>Планування — що робимо цього тижня</h4>
-                                <div class="roadmap-gives">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                                    <span>Розписуємо: хто що робить, до якого дня, з яким результатом.</span>
-                                </div>
-                                <div class="roadmap-risk">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
-                                    <span><strong>Без цього:</strong> люди займаються тим, що їм хочеться, а не тим, що треба бізнесу.</span>
-                                </div>
-                                <div class="roadmap-depends">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-                                    <span><strong>Потребує:</strong> Структура + Статистики — без функцій і цифр план буде "в повітрі".</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="roadmap-item">
-                            <div class="roadmap-item-num">8</div>
-                            <div class="roadmap-item-content">
-                                <h4>Координація — як замовлення рухається по етапах</h4>
-                                <div class="roadmap-gives">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                                    <span>Хто кому передає інформацію, хто де підтверджує, хто контролює терміни.</span>
-                                </div>
-                                <div class="roadmap-risk">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
-                                    <span><strong>Без цього:</strong> вічні фрази «мені не передавали», «я не знав», «затримали там».</span>
-                                </div>
-                                <div class="roadmap-depends">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-                                    <span><strong>Потребує:</strong> Структура — без зон відповідальності координація неможлива.</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="roadmap-item">
-                            <div class="roadmap-item-num">9</div>
-                            <div class="roadmap-item-content">
-                                <h4>Комунікації — як ми говоримо між собою</h4>
-                                <div class="roadmap-gives">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                                    <span>Зустрічі за сценарієм, правила переписки, фіксація домовленостей.</span>
-                                </div>
-                                <div class="roadmap-risk">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
-                                    <span><strong>Без цього:</strong> все перетворюється на "базар", домовленості губляться, емоції киплять.</span>
-                                </div>
-                                <div class="roadmap-depends">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-                                    <span><strong>Потребує:</strong> Координація — без процесів нема про що домовлятись.</span>
-                                </div>
-                            </div>
+                        <div class="timeline-dependency">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="15 18 9 12 15 6"/></svg>
+                            <span><strong>Чому без кроку 1 не працює:</strong> якщо немає цілі — незрозуміло, який результат вважати "цінним". Люди роблять що завгодно, але не те, що потрібно.</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- ЦИФРИ -->
-                <div class="roadmap-category">
-                    <div class="roadmap-category-header" onclick="toggleRoadmapCategory(this)">
-                        <div class="roadmap-category-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-                        </div>
-                        <div class="roadmap-category-info">
-                            <h3>ЦИФРИ</h3>
-                            <span>3 блоки — керування по даних, а не по відчуттях</span>
-                        </div>
-                        <div class="roadmap-category-arrow">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><polyline points="6 9 12 15 18 9"/></svg>
-                        </div>
+                <!-- Step 3 -->
+                <div class="timeline-step">
+                    <div class="timeline-connector">
+                        <div class="timeline-number">3</div>
+                        <div class="timeline-line"></div>
                     </div>
-                    <div class="roadmap-category-body">
-                        <div class="roadmap-item">
-                            <div class="roadmap-item-num">10</div>
-                            <div class="roadmap-item-content">
-                                <h4>Статистики — чи взагалі працює робота</h4>
-                                <div class="roadmap-gives">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                                    <span>На кожну важливу дію є цифра: швидкість, якість, помилки, вчасність.</span>
-                                </div>
-                                <div class="roadmap-risk">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
-                                    <span><strong>Без цього:</strong> керуєте "по відчуттю", а не по даних. Людина може виглядати зайнятою, але насправді нічого не дає компанії.</span>
-                                </div>
-                                <div class="roadmap-depends">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-                                    <span><strong>Потребує:</strong> Структура — без функцій не зрозуміло, що вимірювати. Будуть "замасковані діри".</span>
-                                </div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h4>Функціональна структура</h4>
+                        </div>
+                        <div class="timeline-results">
+                            <div class="timeline-result profit">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                                <span><strong>Прибуток:</strong> видно, де втрачаються гроші; кожна зона працює стабільно → продуктивність зростає</span>
+                            </div>
+                            <div class="timeline-result people">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                                <span><strong>Люди:</strong> хаос "хто що робить" зникає, немає перекладання відповідальності</span>
+                            </div>
+                            <div class="timeline-result time">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                <span><strong>Час:</strong> власник перестає бути "центром вирішення всього", можна делегувати цілі зони</span>
                             </div>
                         </div>
-                        <div class="roadmap-item">
-                            <div class="roadmap-item-num">11</div>
-                            <div class="roadmap-item-content">
-                                <h4>Фінанси — де тече і де заробляє</h4>
-                                <div class="roadmap-gives">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                                    <span>Дивимось: прибуток, витрати, кредити, каса, план/факт по грошах.</span>
-                                </div>
-                                <div class="roadmap-risk">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
-                                    <span><strong>Без цього:</strong> вічна історія "є оборот, а де гроші — невідомо".</span>
-                                </div>
-                                <div class="roadmap-depends">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-                                    <span><strong>Потребує:</strong> Статистики — без операційних цифр фінанси відірвані від реальності.</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="roadmap-item">
-                            <div class="roadmap-item-num">12</div>
-                            <div class="roadmap-item-content">
-                                <h4>Аналіз вузьких місць — де зараз пробоїна</h4>
-                                <div class="roadmap-gives">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                                    <span>AI сам дивиться на цифри й каже: ось проблема, ось чому вона виникла, ось як її закрити.</span>
-                                </div>
-                                <div class="roadmap-risk">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
-                                    <span><strong>Без цього:</strong> будете кожен місяць ловити ті самі збої — як заїжджена платівка.</span>
-                                </div>
-                                <div class="roadmap-depends">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-                                    <span><strong>Потребує:</strong> Статистики + Фінанси — AI не може аналізувати те, чого немає.</span>
-                                </div>
-                            </div>
+                        <div class="timeline-dependency">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="15 18 9 12 15 6"/></svg>
+                            <span><strong>Чому без кроку 2 не працює:</strong> якщо немає ЦКП — незрозуміло, які функції потрібні. Структура буде "для галочки", а не для результату.</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- ВИКОНАННЯ -->
-                <div class="roadmap-category">
-                    <div class="roadmap-category-header" onclick="toggleRoadmapCategory(this)">
-                        <div class="roadmap-category-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                        </div>
-                        <div class="roadmap-category-info">
-                            <h3>ВИКОНАННЯ</h3>
-                            <span>4 блоки — щоб задачі виконувались з першого разу</span>
-                        </div>
-                        <div class="roadmap-category-arrow">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><polyline points="6 9 12 15 18 9"/></svg>
-                        </div>
+                <!-- Step 4 -->
+                <div class="timeline-step">
+                    <div class="timeline-connector">
+                        <div class="timeline-number">4</div>
+                        <div class="timeline-line"></div>
                     </div>
-                    <div class="roadmap-category-body">
-                        <div class="roadmap-item">
-                            <div class="roadmap-item-num">13</div>
-                            <div class="roadmap-item-content">
-                                <h4>Розпорядження — задачу зрозуміли однаково</h4>
-                                <div class="roadmap-gives">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                                    <span>Що зробити → до коли → який результат → як виглядає звіт.</span>
-                                </div>
-                                <div class="roadmap-risk">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
-                                    <span><strong>Без цього:</strong> ви будете повторювати одні й ті самі завдання по 5 разів.</span>
-                                </div>
-                                <div class="roadmap-depends">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-                                    <span><strong>Потребує:</strong> Структура — без функцій не зрозуміло, хто за що відповідає.</span>
-                                </div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h4>Описані процеси та інструкції</h4>
+                        </div>
+                        <div class="timeline-results">
+                            <div class="timeline-result profit">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                                <span><strong>Прибуток:</strong> менше помилок → менше переробок; пришвидшується виробництво → зростає обсяг</span>
+                            </div>
+                            <div class="timeline-result people">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                                <span><strong>Люди:</strong> люди не придумують "свої варіанти", зникають фрази "а я не знав"</span>
+                            </div>
+                            <div class="timeline-result time">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                <span><strong>Час:</strong> новачки входять швидко; команда працює однаково незалежно від настрою</span>
                             </div>
                         </div>
-                        <div class="roadmap-item">
-                            <div class="roadmap-item-num">14</div>
-                            <div class="roadmap-item-content">
-                                <h4>Таск-менеджер — видно прогрес</h4>
-                                <div class="roadmap-gives">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                                    <span>Видно хто що робить, що залежало, що виконано.</span>
-                                </div>
-                                <div class="roadmap-risk">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
-                                    <span><strong>Без цього:</strong> потрібно всіх "смикати", і ви знову стаєте живим нагадувачем.</span>
-                                </div>
-                                <div class="roadmap-depends">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-                                    <span><strong>Потребує:</strong> Розпорядження — без чітких задач таск-менеджер перетворюється на смітник.</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="roadmap-item">
-                            <div class="roadmap-item-num">15</div>
-                            <div class="roadmap-item-content">
-                                <h4>RADAR — співробітник приходить з рішеннями, а не з питаннями</h4>
-                                <div class="roadmap-gives">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                                    <span>Підказує людині, що робити, і пропонує варіанти.</span>
-                                </div>
-                                <div class="roadmap-risk">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
-                                    <span><strong>Без цього:</strong> кожне дрібне питання летить до вас. Ви знову "гугл" для всіх.</span>
-                                </div>
-                                <div class="roadmap-depends">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-                                    <span><strong>Потребує:</strong> Технічний провідник — AI не може підказувати без бази знань.</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="roadmap-item">
-                            <div class="roadmap-item-num">16</div>
-                            <div class="roadmap-item-content">
-                                <h4>Технічний провідник — стандарти під рукою</h4>
-                                <div class="roadmap-gives">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                                    <span>Пояснює кожну дію: як правильно зробити, як уникнути помилки.</span>
-                                </div>
-                                <div class="roadmap-risk">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
-                                    <span><strong>Без цього:</strong> знання в голові однієї людини → люди хворіють → бізнес стоїть.</span>
-                                </div>
-                                <div class="roadmap-depends">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-                                    <span><strong>Потребує:</strong> Структура — без функцій не зрозуміло, для чого писати стандарти.</span>
-                                </div>
-                            </div>
+                        <div class="timeline-dependency">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="15 18 9 12 15 6"/></svg>
+                            <span><strong>Чому без кроку 3 не працює:</strong> якщо немає структури — незрозуміло, ДЛЯ КОГО писати інструкції і хто за що відповідає.</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- КЛІЄНТИ -->
-                <div class="roadmap-category">
-                    <div class="roadmap-category-header" onclick="toggleRoadmapCategory(this)">
-                        <div class="roadmap-category-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                        </div>
-                        <div class="roadmap-category-info">
-                            <h3>КЛІЄНТИ</h3>
-                            <span>5 блоків — як отримувати клієнтів системно</span>
-                        </div>
-                        <div class="roadmap-category-arrow">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><polyline points="6 9 12 15 18 9"/></svg>
-                        </div>
+                <!-- Step 5 -->
+                <div class="timeline-step">
+                    <div class="timeline-connector">
+                        <div class="timeline-number">5</div>
+                        <div class="timeline-line"></div>
                     </div>
-                    <div class="roadmap-category-body">
-                        <div class="roadmap-item">
-                            <div class="roadmap-item-num">17</div>
-                            <div class="roadmap-item-content">
-                                <h4>Оффер — чому купують у вас, а не у сусіда</h4>
-                                <div class="roadmap-gives">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                                    <span>Проста відповідь на питання: «Що я отримую?».</span>
-                                </div>
-                                <div class="roadmap-risk">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
-                                    <span><strong>Без цього:</strong> реклама зливається, люди не розуміють, чому ви кращі.</span>
-                                </div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h4>Система статистик</h4>
+                        </div>
+                        <div class="timeline-results">
+                            <div class="timeline-result profit">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                                <span><strong>Прибуток:</strong> бачиш, що приносить гроші, а що з'їдає; можна масштабувати прибуткове</span>
+                            </div>
+                            <div class="timeline-result people">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                                <span><strong>Люди:</strong> цифри знімають конфлікти; видно, хто реально працює</span>
+                            </div>
+                            <div class="timeline-result time">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                <span><strong>Час:</strong> управління як приладова панель, не потрібно контролювати вручну</span>
                             </div>
                         </div>
-                        <div class="roadmap-item">
-                            <div class="roadmap-item-num">18</div>
-                            <div class="roadmap-item-content">
-                                <h4>Воронка — як йде клієнт від реклами до купівлі</h4>
-                                <div class="roadmap-gives">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                                    <span>Крок за кроком — без провалів.</span>
-                                </div>
-                                <div class="roadmap-risk">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
-                                    <span><strong>Без цього:</strong> заявки губляться, люди доходять до дзвінка через раз.</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="roadmap-item">
-                            <div class="roadmap-item-num">19</div>
-                            <div class="roadmap-item-content">
-                                <h4>CRM — заявки під контролем</h4>
-                                <div class="roadmap-gives">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                                    <span>Видно кожну людину, кожен статус.</span>
-                                </div>
-                                <div class="roadmap-risk">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
-                                    <span><strong>Без цього:</strong> менеджери гублять клієнтів, а ви навіть не знаєте про це.</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="roadmap-item">
-                            <div class="roadmap-item-num">20</div>
-                            <div class="roadmap-item-content">
-                                <h4>Скрипти — стабільний спосіб продажу</h4>
-                                <div class="roadmap-gives">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                                    <span>Менеджери говорять однаково, а не хто як фантазує.</span>
-                                </div>
-                                <div class="roadmap-risk">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
-                                    <span><strong>Без цього:</strong> продажі нестабільні — раз добре, раз ніяк.</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="roadmap-item">
-                            <div class="roadmap-item-num">21</div>
-                            <div class="roadmap-item-content">
-                                <h4>Аналітика реклами — що працює, що ні</h4>
-                                <div class="roadmap-gives">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                                    <span>Розумієте: куди лити гроші, щоб окупилось.</span>
-                                </div>
-                                <div class="roadmap-risk">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
-                                    <span><strong>Без цього:</strong> постійний злив бюджету.</span>
-                                </div>
-                            </div>
+                        <div class="timeline-dependency">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="15 18 9 12 15 6"/></svg>
+                            <span><strong>Чому без кроку 4 не працює:</strong> якщо немає описаних процесів — незрозуміло, ЩО вимірювати. Статистики будуть "з повітря".</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- АВТОМАТИКА -->
-                <div class="roadmap-category">
-                    <div class="roadmap-category-header" onclick="toggleRoadmapCategory(this)">
-                        <div class="roadmap-category-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                <!-- Step 6 -->
+                <div class="timeline-step">
+                    <div class="timeline-connector">
+                        <div class="timeline-number">6</div>
+                        <div class="timeline-line"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h4>Аналіз вузького місця (AI-діагностика)</h4>
                         </div>
-                        <div class="roadmap-category-info">
-                            <h3>АВТОМАТИКА</h3>
-                            <span>3 блоки — AI і боти роблять рутину за вас</span>
+                        <div class="timeline-results">
+                            <div class="timeline-result profit">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                                <span><strong>Прибуток:</strong> лікується те, що з'їдає найбільше грошей; ROI росте, бо фокус на головному</span>
+                            </div>
+                            <div class="timeline-result people">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                                <span><strong>Люди:</strong> не треба шукати винних — AI показує причину; рішення не залежать від настроїв</span>
+                            </div>
+                            <div class="timeline-result time">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                <span><strong>Час:</strong> AI формує план і пріоритети → тобі не треба думати за всіх</span>
+                            </div>
                         </div>
-                        <div class="roadmap-category-arrow">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><polyline points="6 9 12 15 18 9"/></svg>
+                        <div class="timeline-dependency">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="15 18 9 12 15 6"/></svg>
+                            <span><strong>Чому без кроку 5 не працює:</strong> якщо немає статистик — AI не має даних для аналізу. Діагностика буде "на око".</span>
                         </div>
                     </div>
-                    <div class="roadmap-category-body">
-                        <div class="roadmap-item">
-                            <div class="roadmap-item-num">22</div>
-                            <div class="roadmap-item-content">
-                                <h4>AI-асистенти — допомагають кожному робити правильно</h4>
-                                <div class="roadmap-gives">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                                    <span>Пишуть інструкції, підказують у роботі.</span>
-                                </div>
-                                <div class="roadmap-risk">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
-                                    <span><strong>Без цього:</strong> все робиться вручну, все довго, помилки повторюються.</span>
-                                </div>
-                                <div class="roadmap-depends">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-                                    <span><strong>Потребує:</strong> Технічний провідник + Структура — AI потребує базу знань і розуміння функцій.</span>
-                                </div>
+                </div>
+
+                <!-- Step 7 -->
+                <div class="timeline-step">
+                    <div class="timeline-connector">
+                        <div class="timeline-number">7</div>
+                        <div class="timeline-line"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h4>AI-помічник RADAR</h4>
+                        </div>
+                        <div class="timeline-results">
+                            <div class="timeline-result profit">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                                <span><strong>Прибуток:</strong> співробітники приходять з готовими рішеннями → швидкість ×2–3</span>
+                            </div>
+                            <div class="timeline-result people">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                                <span><strong>Люди:</strong> люди перестають "скидати проблеми наверх", відповідальність зростає</span>
+                            </div>
+                            <div class="timeline-result time">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                <span><strong>Час:</strong> мінус 70% зайвих дзвінків і питань; ти приймаєш рішення з готових варіантів</span>
                             </div>
                         </div>
-                        <div class="roadmap-item">
-                            <div class="roadmap-item-num">23</div>
-                            <div class="roadmap-item-content">
-                                <h4>Боти — рутинні нагадування без вас</h4>
-                                <div class="roadmap-gives">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                                    <span>Повідомляють, збирають дані, контролюють процес.</span>
-                                </div>
-                                <div class="roadmap-risk">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
-                                    <span><strong>Без цього:</strong> ви знову будете "живим будильником".</span>
-                                </div>
-                                <div class="roadmap-depends">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-                                    <span><strong>Потребує:</strong> Координація + Таск-менеджер — боти автоматизують те, що вже налаштовано.</span>
-                                </div>
+                        <div class="timeline-dependency">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="15 18 9 12 15 6"/></svg>
+                            <span><strong>Чому без кроку 6 не працює:</strong> якщо немає аналізу вузьких місць — RADAR не знає контекст. Він буде давати загальні поради замість точних рішень.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 8 -->
+                <div class="timeline-step">
+                    <div class="timeline-connector">
+                        <div class="timeline-number">8</div>
+                        <div class="timeline-line"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h4>Технічний провідник (AI-навчання)</h4>
+                        </div>
+                        <div class="timeline-results">
+                            <div class="timeline-result profit">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                                <span><strong>Прибуток:</strong> кожен працює як досвідчений → менше браку; якість стабільна</span>
+                            </div>
+                            <div class="timeline-result people">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                                <span><strong>Люди:</strong> знання перестають жити в одній голові; наймані не "винаходять велосипед"</span>
+                            </div>
+                            <div class="timeline-result time">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                <span><strong>Час:</strong> навчання відбувається автоматично; власник не витрачає час на пояснення</span>
                             </div>
                         </div>
-                        <div class="roadmap-item">
-                            <div class="roadmap-item-num">24</div>
-                            <div class="roadmap-item-content">
-                                <h4>Авто-звіти — щодня бачите стан бізнесу</h4>
-                                <div class="roadmap-gives">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                                    <span>Ранкова картинка: що працює, що падає, що треба поправити.</span>
-                                </div>
-                                <div class="roadmap-risk">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
-                                    <span><strong>Без цього:</strong> ви керуєте "в темряві".</span>
-                                </div>
-                                <div class="roadmap-depends">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-                                    <span><strong>Потребує:</strong> Статистики + Фінанси — звіт без цифр — це просто текст.</span>
-                                </div>
+                        <div class="timeline-dependency">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="15 18 9 12 15 6"/></svg>
+                            <span><strong>Чому без кроку 7 не працює:</strong> якщо люди не вміють приходити з рішеннями — вони не будуть правильно використовувати AI-навчання. Будуть чекати готових відповідей.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 9 -->
+                <div class="timeline-step">
+                    <div class="timeline-connector">
+                        <div class="timeline-number">9</div>
+                        <div class="timeline-line"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h4>Фінансова система</h4>
+                        </div>
+                        <div class="timeline-results">
+                            <div class="timeline-result profit">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                                <span><strong>Прибуток:</strong> чітке розуміння маржі → прибуток зростає; гроші перестають "розтікатися"</span>
                             </div>
+                            <div class="timeline-result people">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                                <span><strong>Люди:</strong> люди розуміють, що їхня дія = конкретні гроші; змінюється поведінка</span>
+                            </div>
+                            <div class="timeline-result time">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                <span><strong>Час:</strong> немає хаосу у платежах; рішення приймаються "краще і раніше"</span>
+                            </div>
+                        </div>
+                        <div class="timeline-dependency">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="15 18 9 12 15 6"/></svg>
+                            <span><strong>Чому без кроку 8 не працює:</strong> якщо люди не навчені — вони будуть робити фінансові помилки. Система буде показувати "криві" цифри.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 10 -->
+                <div class="timeline-step">
+                    <div class="timeline-connector">
+                        <div class="timeline-number">10</div>
+                        <div class="timeline-line"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h4>Найм і введення в посаду</h4>
+                        </div>
+                        <div class="timeline-results">
+                            <div class="timeline-result profit">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                                <span><strong>Прибуток:</strong> новачок дає результат за 7–14 днів, а не через 3 місяці</span>
+                            </div>
+                            <div class="timeline-result people">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                                <span><strong>Люди:</strong> пропадають "помилкові люди"; якість роботи прогнозована</span>
+                            </div>
+                            <div class="timeline-result time">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                <span><strong>Час:</strong> людей навчає система, а не власник; можна масштабувати команду</span>
+                            </div>
+                        </div>
+                        <div class="timeline-dependency">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="15 18 9 12 15 6"/></svg>
+                            <span><strong>Чому без кроку 9 не працює:</strong> якщо немає фінансової системи — незрозуміло, скільки коштує новачок і коли він окупиться. Найм буде "навмання".</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 11 -->
+                <div class="timeline-step">
+                    <div class="timeline-connector">
+                        <div class="timeline-number">11</div>
+                        <div class="timeline-line"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h4>Система планування</h4>
+                        </div>
+                        <div class="timeline-results">
+                            <div class="timeline-result profit">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                                <span><strong>Прибуток:</strong> плани виконуються, а не "зриваються"; компанія рухається прогнозовано</span>
+                            </div>
+                            <div class="timeline-result people">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                                <span><strong>Люди:</strong> немає виправдань "не встиг / забув"; всі бачать пріоритети</span>
+                            </div>
+                            <div class="timeline-result time">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                <span><strong>Час:</strong> тиждень структурований; всі задачі в одному ритмі</span>
+                            </div>
+                        </div>
+                        <div class="timeline-dependency">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="15 18 9 12 15 6"/></svg>
+                            <span><strong>Чому без кроку 10 не працює:</strong> якщо команда не укомплектована і не введена в посаду — плани будуть зриватися через "немає людей" або "вони не розуміють".</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 12 -->
+                <div class="timeline-step">
+                    <div class="timeline-connector">
+                        <div class="timeline-number">12</div>
+                        <div class="timeline-line"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h4>Наради без хаосу</h4>
+                        </div>
+                        <div class="timeline-results">
+                            <div class="timeline-result profit">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                                <span><strong>Прибуток:</strong> фокус на зростанні замість "розбору польотів"; рішення приймаються швидше</span>
+                            </div>
+                            <div class="timeline-result people">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                                <span><strong>Люди:</strong> менше емоцій, більше фактів; всі приходять підготовленими</span>
+                            </div>
+                            <div class="timeline-result time">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                <span><strong>Час:</strong> зустрічі 15–25 хв замість годин; немає втрати часу</span>
+                            </div>
+                        </div>
+                        <div class="timeline-dependency">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="15 18 9 12 15 6"/></svg>
+                            <span><strong>Чому без кроку 11 не працює:</strong> якщо немає системи планування — на нарадах нема про що говорити. Будуть обговорювати "все підряд" замість прогресу по плану.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 13 -->
+                <div class="timeline-step last">
+                    <div class="timeline-connector">
+                        <div class="timeline-number final">13</div>
+                    </div>
+                    <div class="timeline-content final">
+                        <div class="timeline-header">
+                            <h4>Делегування в системі</h4>
+                            <span class="timeline-tag finish">ФІНІШ</span>
+                        </div>
+                        <div class="timeline-results">
+                            <div class="timeline-result profit">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                                <span><strong>Прибуток:</strong> ти керуєш зонами, а не задачами; команда тягне компанію вперед сама</span>
+                            </div>
+                            <div class="timeline-result people">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                                <span><strong>Люди:</strong> люди беруть відповідальність за результат; "дитячі" питання зникають</span>
+                            </div>
+                            <div class="timeline-result time">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                <span><strong>Час:</strong> ти не тримаєш усе в голові; з'являється реальний вільний час</span>
+                            </div>
+                        </div>
+                        <div class="timeline-dependency">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="15 18 9 12 15 6"/></svg>
+                            <span><strong>Чому без кроку 12 не працює:</strong> якщо немає нарад з чітким форматом — делегування перетворюється на "передав і забув". Немає контролю, немає зворотного зв'язку.</span>
                         </div>
                     </div>
                 </div>
@@ -9601,17 +9777,19 @@
             </div>
 
             <!-- Final Block -->
-            <div class="roadmap-final">
+            <div class="roadmap-final-new">
                 <div class="roadmap-final-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="32" height="32"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="36" height="36"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
                 </div>
-                <h3>Якщо будь-який блок пропустити — бізнес знову буде сидіти на вас.</h3>
-                <p><strong>Система = коли все працює разом.</strong></p>
-                <p class="roadmap-final-result">Тоді у вас росте прибуток, а час навпаки звільняється.</p>
+                <h3>13 кроків = Бізнес на автопілоті</h3>
+                <p>Пропустити крок неможливо — кожен наступний тримається на попередньому. Це не набір інструментів, а <strong>єдина технологія</strong>.</p>
+                <div class="roadmap-final-result">
+                    <span>Результат:</span> прибуток росте, а ваш час — звільняється
+                </div>
             </div>
             
             <div class="nav-buttons">
-                <button class="nav-btn" onclick="navigateToSection(5)">Назад</button>
+                <button class="nav-btn" onclick="navigateToSection(8)">Назад</button>
                 <button class="nav-btn primary" onclick="navigateToSection(10)">Далі: Тарифи →</button>
             </div>
         </div>
